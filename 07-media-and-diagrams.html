@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7. Pictures, video and diagrams · Marky Manual</title>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to the text</a>
+<header class="site-header">
+  <button type="button" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">☰</button>
+  <a class="site-title" href="index.html">Marky Manual</a>
+  <input type="search" class="site-search" placeholder="Search" aria-label="Search this site" data-root="">
+  <div class="search-results" hidden></div>
+</header>
+<div class="site">
+<nav id="site-nav" class="site-nav" aria-label="Pages"><ul><li><a href="index.html">Marky Manual</a></li></ul><ul><li><a href="01-getting-started.html">1. Getting started</a></li><li><a href="02-the-window.html">2. The Marky window</a></li><li><a href="03-writing.html">3. Writing</a></li><li><a href="04-views.html">4. Editing views and focus</a></li><li><a href="05-files.html">5. Files and folders</a></li><li><a href="06-tables.html">6. Tables</a></li><li><a href="07-media-and-diagrams.html" aria-current="page">7. Pictures, video and diagrams</a></li><li><a href="08-linked-notes.html">8. Linked notes, tags and the graph</a></li><li><a href="09-citations.html">9. Citations</a></li><li><a href="10-reviewing.html">10. Reviewing: suggestions and comments</a></li><li><a href="11-live-editing.html">11. Editing together, live</a></li><li><a href="12-safety.html">12. Your work is safe</a></li><li><a href="13-export.html">13. Export, publish and present</a></li><li><a href="14-ai.html">14. AI agents (desktop)</a></li><li><a href="15-settings-plugins.html">15. Settings and plugins</a></li><li><a href="16-shortcuts.html">16. Keyboard shortcuts</a></li><li><a href="17-troubleshooting.html">17. Troubleshooting</a></li></ul></nav>
+<main id="content">
+<article class="markdown-body">
+<h1 id="7-pictures-video-and-diagrams">7. Pictures, video and diagrams</h1>
+<h2 id="pictures">Pictures</h2>
+<p><code>![A description](picture.png)</code> shows a picture. The description (alt text) is read to screen-reader users and shown if the picture can't load.</p>
+<ul>
+<li><strong>Paste or drop</strong> a picture into the editor. In a folder it's saved in <code>assets/</code> next to the note; otherwise it's put in the note itself (up to 2 MB).</li>
+<li><strong>Size:</strong> <code>![Map](map.png){width=50%}</code> (of the page width) or <code>{width=320}</code> (pixels), or <em>Image size…</em> with the cursor on a picture.</li>
+<li><strong>Make smaller:</strong> <em>Optimize image…</em> saves a smaller WebP copy and updates the link.</li>
+<li><strong>Pictures from the internet</strong> don't load unless you switch on <em>Settings › Preview › Load remote images</em>; a note can't track you through them.</li>
+</ul>
+<h2 id="videos-and-sound">Videos and sound</h2>
+<p>Put a YouTube or Vimeo link in a picture, or on a line of its own:</p>
+<pre><code>![Our product demo](https://www.youtube.com/watch?v=…)
+
+https://vimeo.com/76979871
+</code></pre>
+<p>The preview shows a <strong>▶ play box</strong>. Nothing is loaded from YouTube or Vimeo until you click it; then the video plays from <strong>youtube-nocookie.com</strong> or <strong>player.vimeo.com</strong>, which don't set tracking cookies before you play. A start time in the link (<code>&amp;t=42s</code>) is kept.</p>
+<p><img src="images/video.png" alt="A video waiting to be played"></p>
+<p>Video and sound <strong>files</strong> get a player: <code>![Clip](media/clip.mp4)</code>, <code>.webm</code>, <code>.mov</code>, <code>.mp3</code>, <code>.m4a</code>, <code>.wav</code>, <code>.ogg</code>, <code>.flac</code>.</p>
+<p>Exports (PDF, Word) and other Markdown apps see a link to the video.</p>
+<h2 id="diagrams">Diagrams</h2>
+<p>A code block with the right language is drawn as a diagram. All of these are drawn <strong>on your own computer</strong>, follow the light or dark theme, and go into HTML, PDF, Word and PowerPoint as pictures. Switch any of them off in <em>Manage plugins…</em>.</p>
+<h3 id="mermaid">Mermaid</h3>
+<pre><code>```mermaid
+flowchart LR
+  Idea --&gt; Draft --&gt; Review --&gt; Published
+```
+</code></pre>
+<p>Flowcharts, sequence, class, state and entity-relationship diagrams, Gantt charts, pie charts, mind maps, timelines and C4. See <a href="https://mermaid.js.org" rel="noopener noreferrer" target="_blank">mermaid.js.org</a>.</p>
+<p><img src="images/mermaid.png" alt="A Mermaid flowchart"></p>
+<h3 id="graphviz">Graphviz</h3>
+<pre><code>```dot
+digraph {
+  rankdir=LR
+  Idea -&gt; Draft -&gt; "Published"
+  Draft -&gt; Idea [label="rework"]
+}
+```
+</code></pre>
+<p>The DOT language of <a href="https://graphviz.org" rel="noopener noreferrer" target="_blank">Graphviz</a>: good for dependency graphs and state machines. A mistake shows Graphviz's message instead of the graph.</p>
+<p><img src="images/graphviz.png" alt="A Graphviz graph"></p>
+<h3 id="charts-vega-lite">Charts (Vega-Lite)</h3>
+<pre><code>```vega-lite
+{
+  "data": {"values": [{"q": "Q1", "n": 3}, {"q": "Q2", "n": 7}, {"q": "Q3", "n": 5}]},
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "q", "type": "nominal", "title": "Quarter"},
+    "y": {"field": "n", "type": "quantitative", "title": "Customers"}
+  }
+}
+```
+</code></pre>
+<p>Bars, lines, areas, points, pie charts and more: see the <a href="https://vega.github.io/vega-lite/examples/" rel="noopener noreferrer" target="_blank">Vega-Lite examples</a>. The data can also come from a file in the folder: <code>"data": {"url": "sales.csv"}</code> (CSV, TSV or JSON), so a chart updates when the file does. Addresses on the internet are refused, so opening a note never tells a server about it.</p>
+<p><img src="images/chart.png" alt="A Vega-Lite bar chart"></p>
+<h3 id="drawings-excalidraw">Drawings (Excalidraw)</h3>
+<p><em>Insert or edit a drawing…</em> opens a full-window drawing board (<a href="https://excalidraw.com" rel="noopener noreferrer" target="_blank">Excalidraw</a>): shapes, arrows, text and freehand drawing with a hand-drawn look. <strong>Save drawing</strong> (or Ctrl+S) puts it into the note as an <code>```excalidraw</code> block. With the cursor in that block, the same command opens it again.</p>
+<p><img src="images/drawing-editor.png" alt="The drawing board"></p>
+<p>A drawing kept in its own <code>.excalidraw</code> file (from excalidraw.com, Obsidian or another app) shows with <code>![Sketch](sketch.excalidraw)</code>.</p>
+<p><img src="images/drawing.png" alt="A drawing in the preview"></p>
+<p>Text in drawings uses your system's font in the preview, not Excalidraw's hand-writing font.</p>
+<h3 id="c4-models-structurizr-and-plantuml">C4 models (Structurizr) and PlantUML</h3>
+<ul>
+<li><code>```structurizr</code> blocks (the Structurizr DSL) are drawn as C4 diagrams on your computer; choose the view with <code>```structurizr view=Containers</code>. See <a href="08-linked-notes.html#architecture-documentation">Architecture documentation</a>.</li>
+<li><code>```plantuml</code> blocks are drawn by a <strong>PlantUML server</strong> you choose in <em>Settings › Preview</em> (the public one, Kroki, or one on your own computer). This is off by default, because the diagram's text goes to that server.</li>
+</ul>
+<h3 id="math">Math</h3>
+<p><code>$E = mc^2$</code> inline, or a block:</p>
+<pre><code>$$
+\int_0^1 x^2\,dx = \frac{1}{3}
+$$
+</code></pre>
+<p>Math is typeset with KaTeX and also given to screen readers as MathML. <code>$5 and $10</code> stays plain text.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="06-tables.html">← 6. Tables</a><a class="next" href="08-linked-notes.html">8. Linked notes, tags and the graph →</a></nav>
+<footer class="site-footer">Made with <a href="https://github.com/michaelkloprogge-gif/marky-releases">Marky</a></footer>
+</main>
+<aside class="page-toc" aria-label="On this page"><strong>On this page</strong><ul><li class="d2"><a href="#pictures">Pictures</a></li><li class="d2"><a href="#videos-and-sound">Videos and sound</a></li><li class="d2"><a href="#diagrams">Diagrams</a></li><li class="d3"><a href="#mermaid">Mermaid</a></li><li class="d3"><a href="#graphviz">Graphviz</a></li><li class="d3"><a href="#charts-vega-lite">Charts (Vega-Lite)</a></li><li class="d3"><a href="#drawings-excalidraw">Drawings (Excalidraw)</a></li><li class="d3"><a href="#c4-models-structurizr-and-plantuml">C4 models (Structurizr) and PlantUML</a></li><li class="d3"><a href="#math">Math</a></li></ul></aside>
+</div>
+</body>
+</html>

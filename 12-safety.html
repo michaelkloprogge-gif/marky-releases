@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>12. Your work is safe · Marky Manual</title>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to the text</a>
+<header class="site-header">
+  <button type="button" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">☰</button>
+  <a class="site-title" href="index.html">Marky Manual</a>
+  <input type="search" class="site-search" placeholder="Search" aria-label="Search this site" data-root="">
+  <div class="search-results" hidden></div>
+</header>
+<div class="site">
+<nav id="site-nav" class="site-nav" aria-label="Pages"><ul><li><a href="index.html">Marky Manual</a></li></ul><ul><li><a href="01-getting-started.html">1. Getting started</a></li><li><a href="02-the-window.html">2. The Marky window</a></li><li><a href="03-writing.html">3. Writing</a></li><li><a href="04-views.html">4. Editing views and focus</a></li><li><a href="05-files.html">5. Files and folders</a></li><li><a href="06-tables.html">6. Tables</a></li><li><a href="07-media-and-diagrams.html">7. Pictures, video and diagrams</a></li><li><a href="08-linked-notes.html">8. Linked notes, tags and the graph</a></li><li><a href="09-citations.html">9. Citations</a></li><li><a href="10-reviewing.html">10. Reviewing: suggestions and comments</a></li><li><a href="11-live-editing.html">11. Editing together, live</a></li><li><a href="12-safety.html" aria-current="page">12. Your work is safe</a></li><li><a href="13-export.html">13. Export, publish and present</a></li><li><a href="14-ai.html">14. AI agents (desktop)</a></li><li><a href="15-settings-plugins.html">15. Settings and plugins</a></li><li><a href="16-shortcuts.html">16. Keyboard shortcuts</a></li><li><a href="17-troubleshooting.html">17. Troubleshooting</a></li></ul></nav>
+<main id="content">
+<article class="markdown-body">
+<h1 id="12-your-work-is-safe">12. Your work is safe</h1>
+<h2 id="drafts-and-recovery">Drafts and recovery</h2>
+<p>Every open note is saved as a <strong>draft</strong> in the background within a few seconds of typing, separately from your file. The status bar says <em>Draft saved</em>. After a crash, a power cut or an accidental reload, Marky lists the notes with unsaved work and offers to restore them. Your open tabs and folder come back the next time you start.</p>
+<p><em>Desktop:</em> saving is <strong>atomic</strong>: the new version is written to a temporary file first and then put in place, so a crash never leaves a half-written file.</p>
+<h2 id="version-history">Version history</h2>
+<p>Every time you save, Marky keeps a copy (the last 100 per note, and the note as it was before Marky first changed it). <em>Version history…</em> lists them:</p>
+<p><img src="images/history.png" alt="Version history: the versions on the left, the comparison on the right"></p>
+<ul>
+<li>Each version shows when it was saved, how long it was, and <strong>by whom</strong>: you, or in a shared note the people who typed since the version before.</li>
+<li>Pick one to compare it side by side with the note now.</li>
+<li><strong>Restore this version</strong> puts it back as one change you can undo.</li>
+<li>The copies are kept on this computer only. <em>Forget this file's history</em> removes them.</li>
+</ul>
+<h2 id="encrypted-notes">Encrypted notes</h2>
+<p>Keep a note readable only with a passphrase: passwords, personal matters, anything confidential.</p>
+<h3 id="encrypting-a-note">Encrypting a note</h3>
+<ol>
+<li>Open the note (saved, in a folder) and run <em>Encrypt this note (passphrase)…</em>.</li>
+<li>Choose a passphrase of at least 10 characters. A few words works well: <em>correct horse battery staple</em>. Marky refuses passphrases that are easy to guess.</li>
+<li>Type it again.</li>
+<li>Confirm. The note is saved as <code>note.md.age</code>, and the unencrypted <code>note.md</code> is removed, together with its version history, draft and comments.</li>
+</ol>
+<p><img src="images/encrypt-confirm.png" alt="Confirming encryption"></p>
+<h3 id="opening-an-encrypted-note">Opening an encrypted note</h3>
+<p>Encrypted notes have a 🔒 in the folder and on their tab. Clicking one asks for the passphrase; a wrong one asks again.</p>
+<p><img src="images/encrypt-open.png" alt="Asking for the passphrase"></p>
+<p>Edit and save as usual: every save is encrypted again with the same passphrase.</p>
+<h3 id="what-marky-never-does-with-an-encrypted-note">What Marky never does with an encrypted note</h3>
+<ul>
+<li>No <strong>drafts</strong> and no <strong>version history</strong> (they'd be stored unencrypted).</li>
+<li>Not in <strong>search</strong>, the <strong>index</strong>, <strong>tags</strong>, <strong>backlinks</strong> or the <strong>graph</strong>.</li>
+<li>No <strong>comments</strong> (use a `` in the text instead).</li>
+<li>Not sent to <strong>AI agents</strong>, not readable by <strong>plugins</strong>, not <strong>shared live</strong>.</li>
+<li>Not reopened when Marky restarts: open it again with its passphrase.</li>
+</ul>
+<h3 id="taking-the-encryption-off">Taking the encryption off</h3>
+<p><em>Remove encryption from this note…</em> saves it as an ordinary <code>note.md</code> again.</p>
+<h3 id="the-format">The format</h3>
+<p><a href="https://age-encryption.org" rel="noopener noreferrer" target="_blank">age</a>, with scrypt to turn the passphrase into a key and ChaCha20-Poly1305 to encrypt, written as text so it works in Git. The <code>age</code> command-line tool opens the same files: <code>age -d note.md.age &gt; note.md</code>.</p>
+<p><strong>Nobody can open the note without the passphrase</strong>: not Marky, not its makers, not you. Keep it somewhere safe, like a password manager.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="11-live-editing.html">← 11. Editing together, live</a><a class="next" href="13-export.html">13. Export, publish and present →</a></nav>
+<footer class="site-footer">Made with <a href="https://github.com/michaelkloprogge-gif/marky-releases">Marky</a></footer>
+</main>
+<aside class="page-toc" aria-label="On this page"><strong>On this page</strong><ul><li class="d2"><a href="#drafts-and-recovery">Drafts and recovery</a></li><li class="d2"><a href="#version-history">Version history</a></li><li class="d2"><a href="#encrypted-notes">Encrypted notes</a></li><li class="d3"><a href="#encrypting-a-note">Encrypting a note</a></li><li class="d3"><a href="#opening-an-encrypted-note">Opening an encrypted note</a></li><li class="d3"><a href="#what-marky-never-does-with-an-encrypted-note">What Marky never does with an encrypted note</a></li><li class="d3"><a href="#taking-the-encryption-off">Taking the encryption off</a></li><li class="d3"><a href="#the-format">The format</a></li></ul></aside>
+</div>
+</body>
+</html>

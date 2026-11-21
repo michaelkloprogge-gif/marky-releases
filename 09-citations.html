@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>9. Citations · Marky Manual</title>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to the text</a>
+<header class="site-header">
+  <button type="button" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">☰</button>
+  <a class="site-title" href="index.html">Marky Manual</a>
+  <input type="search" class="site-search" placeholder="Search" aria-label="Search this site" data-root="">
+  <div class="search-results" hidden></div>
+</header>
+<div class="site">
+<nav id="site-nav" class="site-nav" aria-label="Pages"><ul><li><a href="index.html">Marky Manual</a></li></ul><ul><li><a href="01-getting-started.html">1. Getting started</a></li><li><a href="02-the-window.html">2. The Marky window</a></li><li><a href="03-writing.html">3. Writing</a></li><li><a href="04-views.html">4. Editing views and focus</a></li><li><a href="05-files.html">5. Files and folders</a></li><li><a href="06-tables.html">6. Tables</a></li><li><a href="07-media-and-diagrams.html">7. Pictures, video and diagrams</a></li><li><a href="08-linked-notes.html">8. Linked notes, tags and the graph</a></li><li><a href="09-citations.html" aria-current="page">9. Citations</a></li><li><a href="10-reviewing.html">10. Reviewing: suggestions and comments</a></li><li><a href="11-live-editing.html">11. Editing together, live</a></li><li><a href="12-safety.html">12. Your work is safe</a></li><li><a href="13-export.html">13. Export, publish and present</a></li><li><a href="14-ai.html">14. AI agents (desktop)</a></li><li><a href="15-settings-plugins.html">15. Settings and plugins</a></li><li><a href="16-shortcuts.html">16. Keyboard shortcuts</a></li><li><a href="17-troubleshooting.html">17. Troubleshooting</a></li></ul></nav>
+<main id="content">
+<article class="markdown-body">
+<h1 id="9-citations">9. Citations</h1>
+<p>Marky cites from a bibliography the way Pandoc and most academic Markdown tools do, so your notes stay compatible.</p>
+<h2 id="1-a-bibliography">1. A bibliography</h2>
+<p>Put your references in a file next to the note:</p>
+<ul>
+<li><strong>BibTeX</strong> (<code>.bib</code>): exported by Zotero, JabRef, Mendeley, Google Scholar and most reference managers.</li>
+<li><strong>CSL-JSON</strong> (<code>.json</code>): exported by Zotero (<em>Better CSL JSON</em>) and others.</li>
+</ul>
+<pre><code class="hljs language-bibtex">@article{smith2020,
+  author  = {Smith, John and Lee, Kim},
+  title   = {Fast Markdown Parsing},
+  journal = {Communications of the ACM},
+  year    = {2020}, volume = {63}, number = {4}, pages = {12--19},
+  doi     = {10.1145/1234}
+}
+</code></pre>
+<h2 id="2-name-it-in-the-note">2. Name it in the note</h2>
+<pre><code class="hljs language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">bibliography:</span> <span class="hljs-string">references.bib</span>
+<span class="hljs-meta">---
+</span></code></pre>
+<h2 id="3-cite">3. Cite</h2>
+<table>
+<thead>
+<tr>
+<th>Write</th>
+<th>Author-date (default)</th>
+<th>Numbered</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[@smith2020]</code></td>
+<td>(Smith &amp; Lee, 2020)</td>
+<td>[1]</td>
+</tr>
+<tr>
+<td><code>[@smith2020, p. 14]</code></td>
+<td>(Smith &amp; Lee, 2020, p. 14)</td>
+<td>[1, p. 14]</td>
+</tr>
+<tr>
+<td><code>[@smith2020; @knuth1984]</code></td>
+<td>(Smith &amp; Lee, 2020; Knuth, 1984)</td>
+<td>[1, 2]</td>
+</tr>
+<tr>
+<td><code>[see @knuth1984]</code></td>
+<td>(see Knuth, 1984)</td>
+<td>[see 2]</td>
+</tr>
+<tr>
+<td><code>[-@smith2020]</code></td>
+<td>(2020)</td>
+<td>[1]</td>
+</tr>
+<tr>
+<td><code>@knuth1984 says</code></td>
+<td>Knuth (1984) says</td>
+<td>Knuth [2] says</td>
+</tr>
+</tbody>
+</table>
+<p>Three or more authors become <em>García et al.</em> A list of <strong>References</strong> goes at the end of the note, or where it has a line <code>&lt;!-- references --&gt;</code>.</p>
+<p><img src="images/citations.png" alt="Citations and the list of references in the preview"></p>
+<h2 id="options">Options</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>citation-style: numeric</code></td>
+<td>Numbers in order of first citation, and a numbered list (also <code>ieee</code> or <code>vancouver</code>)</td>
+</tr>
+<tr>
+<td><code>reference-section-title: Literatuur</code></td>
+<td>The heading above the list</td>
+</tr>
+</tbody>
+</table>
+<h2 id="where-citations-appear">Where citations appear</h2>
+<p>In the preview, the seamless view, and in Word, PDF and HTML exports and published websites. The note itself keeps the <code>[@key]</code> text, so you can still change the style or use Pandoc. A key that isn't in the bibliography stays as <code>[@key]</code>, so you can spot typos.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="08-linked-notes.html">← 8. Linked notes, tags and the graph</a><a class="next" href="10-reviewing.html">10. Reviewing: suggestions and comments →</a></nav>
+<footer class="site-footer">Made with <a href="https://github.com/michaelkloprogge-gif/marky-releases">Marky</a></footer>
+</main>
+<aside class="page-toc" aria-label="On this page"><strong>On this page</strong><ul><li class="d2"><a href="#1-a-bibliography">1. A bibliography</a></li><li class="d2"><a href="#2-name-it-in-the-note">2. Name it in the note</a></li><li class="d2"><a href="#3-cite">3. Cite</a></li><li class="d2"><a href="#options">Options</a></li><li class="d2"><a href="#where-citations-appear">Where citations appear</a></li></ul></aside>
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6. Tables · Marky Manual</title>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to the text</a>
+<header class="site-header">
+  <button type="button" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">☰</button>
+  <a class="site-title" href="index.html">Marky Manual</a>
+  <input type="search" class="site-search" placeholder="Search" aria-label="Search this site" data-root="">
+  <div class="search-results" hidden></div>
+</header>
+<div class="site">
+<nav id="site-nav" class="site-nav" aria-label="Pages"><ul><li><a href="index.html">Marky Manual</a></li></ul><ul><li><a href="01-getting-started.html">1. Getting started</a></li><li><a href="02-the-window.html">2. The Marky window</a></li><li><a href="03-writing.html">3. Writing</a></li><li><a href="04-views.html">4. Editing views and focus</a></li><li><a href="05-files.html">5. Files and folders</a></li><li><a href="06-tables.html" aria-current="page">6. Tables</a></li><li><a href="07-media-and-diagrams.html">7. Pictures, video and diagrams</a></li><li><a href="08-linked-notes.html">8. Linked notes, tags and the graph</a></li><li><a href="09-citations.html">9. Citations</a></li><li><a href="10-reviewing.html">10. Reviewing: suggestions and comments</a></li><li><a href="11-live-editing.html">11. Editing together, live</a></li><li><a href="12-safety.html">12. Your work is safe</a></li><li><a href="13-export.html">13. Export, publish and present</a></li><li><a href="14-ai.html">14. AI agents (desktop)</a></li><li><a href="15-settings-plugins.html">15. Settings and plugins</a></li><li><a href="16-shortcuts.html">16. Keyboard shortcuts</a></li><li><a href="17-troubleshooting.html">17. Troubleshooting</a></li></ul></nav>
+<main id="content">
+<article class="markdown-body">
+<h1 id="6-tables">6. Tables</h1>
+<h2 id="writing-a-table">Writing a table</h2>
+<pre><code>| Name  | Role      | Since |
+|-------|-----------|------:|
+| Anna  | Editor    |  2021 |
+| Ben   | Reviewer  |  2023 |
+</code></pre>
+<p>The second line separates the header from the rows; a <code>:</code> on the right aligns a column right (<code>:---</code> left, <code>:---:</code> centred). <em>Insert table</em> (toolbar or <code>/table</code>) starts one for you.</p>
+<h2 id="typing-in-a-table">Typing in a table</h2>
+<p>While the cursor is in a table:</p>
+<table>
+<thead>
+<tr>
+<th>Keys</th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tab</strong> / <strong>Shift+Tab</strong></td>
+<td>Next / previous cell (Tab in the last cell adds a row)</td>
+</tr>
+<tr>
+<td><strong>Enter</strong></td>
+<td>The cell below (a new row at the bottom)</td>
+</tr>
+<tr>
+<td><strong>Alt+↑ / Alt+↓</strong></td>
+<td>Move the row up / down</td>
+</tr>
+<tr>
+<td><strong>Alt+← / Alt+→</strong></td>
+<td>Move the column left / right</td>
+</tr>
+<tr>
+<td><strong>Ctrl+Alt+F</strong></td>
+<td>Line up the columns</td>
+</tr>
+</tbody>
+</table>
+<p>A <strong>table bar</strong> appears above the table: add or remove rows and columns, align a column, sort by a column, and <em>Edit table…</em>.</p>
+<p><img src="images/table-bar.png" alt="A table with the table bar"></p>
+<h2 id="the-visual-table-editor">The visual table editor</h2>
+<p><em>Edit table…</em> (or double-click the table in the preview) opens a grid you edit like a spreadsheet: click a cell and type, use the arrow keys, add and delete rows and columns, set alignment, sort. <strong>Paste</strong> cells straight from Excel or Google Sheets. <em>Done</em> writes the table back as Markdown.</p>
+<p><img src="images/table-editor.png" alt="The visual table editor"></p>
+<h2 id="from-a-spreadsheet-or-csv">From a spreadsheet or CSV</h2>
+<p>Copy cells in Excel or Google Sheets and paste them into the visual table editor. The <strong>CSV tables</strong> plugin (<a href="15-settings-plugins.html">Plugins</a>) draws <code>```csv</code> blocks as tables.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="05-files.html">← 5. Files and folders</a><a class="next" href="07-media-and-diagrams.html">7. Pictures, video and diagrams →</a></nav>
+<footer class="site-footer">Made with <a href="https://github.com/michaelkloprogge-gif/marky-releases">Marky</a></footer>
+</main>
+<aside class="page-toc" aria-label="On this page"><strong>On this page</strong><ul><li class="d2"><a href="#writing-a-table">Writing a table</a></li><li class="d2"><a href="#typing-in-a-table">Typing in a table</a></li><li class="d2"><a href="#the-visual-table-editor">The visual table editor</a></li><li class="d2"><a href="#from-a-spreadsheet-or-csv">From a spreadsheet or CSV</a></li></ul></aside>
+</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1. Getting started · Marky Manual</title>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to the text</a>
+<header class="site-header">
+  <button type="button" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">☰</button>
+  <a class="site-title" href="index.html">Marky Manual</a>
+  <input type="search" class="site-search" placeholder="Search" aria-label="Search this site" data-root="">
+  <div class="search-results" hidden></div>
+</header>
+<div class="site">
+<nav id="site-nav" class="site-nav" aria-label="Pages"><ul><li><a href="index.html">Marky Manual</a></li></ul><ul><li><a href="01-getting-started.html" aria-current="page">1. Getting started</a></li><li><a href="02-the-window.html">2. The Marky window</a></li><li><a href="03-writing.html">3. Writing</a></li><li><a href="04-views.html">4. Editing views and focus</a></li><li><a href="05-files.html">5. Files and folders</a></li><li><a href="06-tables.html">6. Tables</a></li><li><a href="07-media-and-diagrams.html">7. Pictures, video and diagrams</a></li><li><a href="08-linked-notes.html">8. Linked notes, tags and the graph</a></li><li><a href="09-citations.html">9. Citations</a></li><li><a href="10-reviewing.html">10. Reviewing: suggestions and comments</a></li><li><a href="11-live-editing.html">11. Editing together, live</a></li><li><a href="12-safety.html">12. Your work is safe</a></li><li><a href="13-export.html">13. Export, publish and present</a></li><li><a href="14-ai.html">14. AI agents (desktop)</a></li><li><a href="15-settings-plugins.html">15. Settings and plugins</a></li><li><a href="16-shortcuts.html">16. Keyboard shortcuts</a></li><li><a href="17-troubleshooting.html">17. Troubleshooting</a></li></ul></nav>
+<main id="content">
+<article class="markdown-body">
+<h1 id="1-getting-started">1. Getting started</h1>
+<h2 id="the-desktop-app">The desktop app</h2>
+<p>Download the installer for your system from the <a href="https://github.com/michaelkloprogge-gif/marky-releases/releases/latest" rel="noopener noreferrer" target="_blank">releases page</a>:</p>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>File</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows</td>
+<td><code>Marky_…_x64-setup.exe</code> (or the <code>.msi</code> for managed installs)</td>
+</tr>
+<tr>
+<td>macOS</td>
+<td><code>Marky_…_universal.dmg</code></td>
+</tr>
+<tr>
+<td>Linux</td>
+<td><code>Marky_…_amd64.AppImage</code> or <code>.deb</code></td>
+</tr>
+</tbody>
+</table>
+<p>Run it and follow the steps. On Windows, SmartScreen may warn that the installer isn't signed yet: choose <strong>More info → Run anyway</strong>.</p>
+<p>Afterwards Markdown files (<code>.md</code>, <code>.markdown</code>) open in Marky when you double-click them, or with <em>Open with → Marky</em>. The desktop app checks for updates (you can switch that off) and installs them only when you agree; see <a href="15-settings-plugins.html">Settings</a>.</p>
+<h2 id="the-web-app">The web app</h2>
+<p>Open the web app's address in Chrome, Edge, Firefox or Safari. Nothing is installed and nothing about your notes leaves your computer: Marky reads and writes files on your own disk.</p>
+<ul>
+<li>After the first visit the web app also works <strong>offline</strong>.</li>
+<li><strong>Chrome and Edge</strong> can open a whole folder and save straight into it. Other browsers open a read-only copy of a folder and download what you save.</li>
+<li>To give the web app its own window, choose <strong>Install Marky</strong> in the address bar (Chrome, Edge).</li>
+</ul>
+<h2 id="on-a-phone-or-tablet">On a phone or tablet</h2>
+<p>Open the web app in the browser on your phone or tablet and add it to the home screen:</p>
+<ul>
+<li><strong>iPhone and iPad (Safari):</strong> the share button, then <em>Add to Home Screen</em>.</li>
+<li><strong>Android (Chrome):</strong> the ⋮ menu, then <em>Add to Home screen</em> or <em>Install app</em>.</li>
+</ul>
+<p>It then opens full screen, like an app, and works offline.</p>
+<p><img src="images/phone.png" alt="Marky on a phone: two compact rows of buttons, the note below"></p>
+<p>On a phone the buttons take two rows. Swipe the lower row (formatting) sideways for more, and tap the <strong>command palette button</strong>, the last one on the top row, for everything else. The sidebar slides over the text and closes when you pick something. A tablet shows the same layout as a computer.</p>
+<h2 id="your-first-note">Your first note</h2>
+<ol>
+<li>Start Marky. An empty note, <em>Untitled.md</em>, is open.</li>
+<li>Type a heading: <code># Shopping list</code>, press Enter, and a list: <code>- bread</code>. Press Enter again and the next <code>-</code> appears by itself.</li>
+<li>The preview on the right shows the result as you type.</li>
+<li>Press <strong>Ctrl+S</strong> to save. Marky asks where; pick a folder and a name.</li>
+</ol>
+<p><img src="images/first-note.png" alt="A first note: Markdown on the left, the result on the right"></p>
+<p>From now on, Marky keeps a draft of everything you type, even before you save, so nothing is lost if the computer crashes (<a href="12-safety.html">Your work is safe</a>).</p>
+<h2 id="working-with-a-folder">Working with a folder</h2>
+<p>Most people keep their notes in a folder (or a few). Open one with <strong>Open folder</strong> (the second button, or <strong>Ctrl+Shift+O</strong>). The sidebar lists its notes; click one to open it in a tab. Links between notes, search across all of them, tags and the graph all work on the open folder.</p>
+<h2 id="finding-any-command">Finding any command</h2>
+<p>Everything Marky can do is in the <strong>command palette</strong>: press <strong>F1</strong> (or <strong>Ctrl+Shift+P</strong>) and type a few letters of what you want, such as <em>export</em> or <em>table</em>. The palette shows the shortcut next to each command, so you learn them as you go.</p>
+<p><img src="images/palette.png" alt="The command palette, filtered on &quot;export&quot;"></p>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="index.html">← Marky Manual</a><a class="next" href="02-the-window.html">2. The Marky window →</a></nav>
+<footer class="site-footer">Made with <a href="https://github.com/michaelkloprogge-gif/marky-releases">Marky</a></footer>
+</main>
+<aside class="page-toc" aria-label="On this page"><strong>On this page</strong><ul><li class="d2"><a href="#the-desktop-app">The desktop app</a></li><li class="d2"><a href="#the-web-app">The web app</a></li><li class="d2"><a href="#on-a-phone-or-tablet">On a phone or tablet</a></li><li class="d2"><a href="#your-first-note">Your first note</a></li><li class="d2"><a href="#working-with-a-folder">Working with a folder</a></li><li class="d2"><a href="#finding-any-command">Finding any command</a></li></ul></aside>
+</div>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3. Writing · Marky Manual</title>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to the text</a>
+<header class="site-header">
+  <button type="button" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">☰</button>
+  <a class="site-title" href="index.html">Marky Manual</a>
+  <input type="search" class="site-search" placeholder="Search" aria-label="Search this site" data-root="">
+  <div class="search-results" hidden></div>
+</header>
+<div class="site">
+<nav id="site-nav" class="site-nav" aria-label="Pages"><ul><li><a href="index.html">Marky Manual</a></li></ul><ul><li><a href="01-getting-started.html">1. Getting started</a></li><li><a href="02-the-window.html">2. The Marky window</a></li><li><a href="03-writing.html" aria-current="page">3. Writing</a></li><li><a href="04-views.html">4. Editing views and focus</a></li><li><a href="05-files.html">5. Files and folders</a></li><li><a href="06-tables.html">6. Tables</a></li><li><a href="07-media-and-diagrams.html">7. Pictures, video and diagrams</a></li><li><a href="08-linked-notes.html">8. Linked notes, tags and the graph</a></li><li><a href="09-citations.html">9. Citations</a></li><li><a href="10-reviewing.html">10. Reviewing: suggestions and comments</a></li><li><a href="11-live-editing.html">11. Editing together, live</a></li><li><a href="12-safety.html">12. Your work is safe</a></li><li><a href="13-export.html">13. Export, publish and present</a></li><li><a href="14-ai.html">14. AI agents (desktop)</a></li><li><a href="15-settings-plugins.html">15. Settings and plugins</a></li><li><a href="16-shortcuts.html">16. Keyboard shortcuts</a></li><li><a href="17-troubleshooting.html">17. Troubleshooting</a></li></ul></nav>
+<main id="content">
+<article class="markdown-body">
+<h1 id="3-writing">3. Writing</h1>
+<h2 id="markdown-in-a-nutshell">Markdown in a nutshell</h2>
+<p>Markdown is plain text with a few symbols for formatting. Marky follows GitHub's flavour (CommonMark with tables, task lists, strikethrough and footnotes).</p>
+<table>
+<thead>
+<tr>
+<th>Write</th>
+<th>Get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code># Title</code>, <code>## Section</code> … <code>######</code></td>
+<td>Headings (they also make the <strong>Outline</strong>)</td>
+</tr>
+<tr>
+<td><code>**bold**</code>, <code>_italic_</code>, <code>~~strike~~</code>, <code>`code`</code></td>
+<td><strong>bold</strong>, <em>italic</em>, <del>strike</del>, <code>code</code></td>
+</tr>
+<tr>
+<td><code>- item</code>, <code>1. item</code>, <code>- [ ] task</code></td>
+<td>Lists and checklists</td>
+</tr>
+<tr>
+<td><code>&gt; quote</code></td>
+<td>A quote</td>
+</tr>
+<tr>
+<td><code>&gt; [!NOTE]</code> (TIP, IMPORTANT, WARNING, CAUTION)</td>
+<td>A coloured callout</td>
+</tr>
+<tr>
+<td><code>[text](https://…)</code></td>
+<td>A link</td>
+</tr>
+<tr>
+<td><code>![description](picture.png)</code></td>
+<td>A picture</td>
+</tr>
+<tr>
+<td><code>```js</code> … <code>```</code></td>
+<td>Code with colours</td>
+</tr>
+<tr>
+<td><code>$x^2$</code>, <code>$$ … $$</code></td>
+<td>Math</td>
+</tr>
+<tr>
+<td><code>Text[^1]</code> and <code>[^1]: the note</code></td>
+<td>A footnote</td>
+</tr>
+<tr>
+<td><code>---</code> (alone, between blank lines)</td>
+<td>A horizontal line, and a new slide when presenting</td>
+</tr>
+</tbody>
+</table>
+<p><img src="images/writing.png" alt="Formatting in the editor and the preview"></p>
+<p><strong>Enter</strong> continues a list (and a numbered list counts on); Enter on an empty item ends the list. <strong>Tab</strong> and <strong>Shift+Tab</strong> indent and outdent list items.</p>
+<h2 id="formatting-shortcuts">Formatting shortcuts</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Keys</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bold, italic, inline code</td>
+<td>Ctrl+B, Ctrl+I, Ctrl+E</td>
+</tr>
+<tr>
+<td>Strikethrough</td>
+<td>Ctrl+Shift+X</td>
+</tr>
+<tr>
+<td>Heading 1–6</td>
+<td>Ctrl+Alt+1 … 6</td>
+</tr>
+<tr>
+<td>Bulleted, numbered, task list</td>
+<td>Ctrl+Shift+8, 7, 9</td>
+</tr>
+<tr>
+<td>Tick a task</td>
+<td>Ctrl+Enter</td>
+</tr>
+<tr>
+<td>Quote</td>
+<td>Ctrl+Shift+.</td>
+</tr>
+<tr>
+<td>Link</td>
+<td>Ctrl+K (or paste an address over selected text)</td>
+</tr>
+<tr>
+<td>Code block</td>
+<td>Ctrl+Alt+C</td>
+</tr>
+</tbody>
+</table>
+<p>Shortcuts toggle: Ctrl+B on bold text makes it plain again.</p>
+<h2 id="the--menu">The / menu</h2>
+<p>Type <code>/</code> at the start of a line (or after a space) for a menu of things to insert: headings, lists, a table, callouts, a code block, Mermaid and other diagrams, math, a divider, an image, a link, today's date, contents, and your templates. Keep typing to narrow it down (<code>/tab</code> → <em>Table</em>) and press Enter. <strong>Tab</strong> jumps between the parts to fill in.</p>
+<p><img src="images/slash-menu.png" alt="The / menu"></p>
+<h2 id="templates">Templates</h2>
+<p><em>New note from template…</em> makes a note from a template; <em>Insert template…</em> puts one at the cursor. Four are built in: meeting notes, decision record, project brief and daily note. Your own templates are Markdown files in a folder called <code>templates</code> in the open folder. They can use:</p>
+<table>
+<thead>
+<tr>
+<th>Placeholder</th>
+<th>Becomes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{{date}}</code>, <code>{{time}}</code>, <code>{{weekday}}</code></td>
+<td>Today's date, the time, the day of the week</td>
+</tr>
+<tr>
+<td><code>{{title}}</code></td>
+<td>The note's name</td>
+</tr>
+<tr>
+<td><code>{{cursor}}</code></td>
+<td>Where you start typing</td>
+</tr>
+</tbody>
+</table>
+<h2 id="properties">Properties</h2>
+<p>Front matter is a block of YAML at the very top of a note, between two <code>---</code> lines. Marky shows it as <strong>Properties</strong> in the sidebar, where you can edit it without touching YAML:</p>
+<p><img src="images/properties.png" alt="The Properties panel"></p>
+<ul>
+<li>Text and numbers in fields, yes/no as a checkbox, lists such as <code>tags</code> as chips (type and press Enter to add, × to remove).</li>
+<li>Click a property's name to rename it; the row at the bottom adds one.</li>
+<li>Comments and formatting in the YAML are kept, and every change can be undone with Ctrl+Z.</li>
+</ul>
+<p>Some properties mean something to Marky: <code>title</code> (exports and websites), <code>tags</code>, <code>word-goal</code>, <code>bibliography</code> and <code>citation-style</code> (<a href="09-citations.html">Citations</a>), <code>publish: false</code> and <code>draft: true</code> (<a href="13-export.html">publishing a website</a>).</p>
+<h2 id="pasting">Pasting</h2>
+<ul>
+<li><strong>Pictures:</strong> paste a screenshot or drop an image file. In a folder, it's saved in <code>assets/</code> next to the note and linked. Large pictures are made smaller (WebP, at most 1920 px wide; <em>Settings › Editor</em>).</li>
+<li><strong>From web pages, Word and Google Docs:</strong> formatted text becomes clean Markdown (headings, bold, links, lists, tables, code). <strong>Ctrl+Shift+V</strong> pastes plain text.</li>
+<li><strong>An address over selected text</strong> makes a link.</li>
+</ul>
+<h2 id="checks-while-you-type">Checks while you type</h2>
+<p>Marky underlines common problems: a skipped heading level, an empty heading, spaces at the end of a line, a link without text, a code block that isn't closed, and (with a folder open) links to notes or files that don't exist. Point at the underline for an explanation and, where the fix is clear, a <strong>Fix</strong> button. <em>Check links in folder…</em> lists every broken link in the folder.</p>
+<p><img src="images/lint.png" alt="A Markdown check with its Fix button"></p>
+<p>The status bar also warns about <strong>pictures without a description</strong> (alt text), which screen-reader users need.</p>
+<h2 id="sections-multiple-cursors-and-the-word-goal">Sections, multiple cursors and the word goal</h2>
+<ul>
+<li><strong>Fold</strong> a section with the ▾ next to its heading. <strong>Alt+Shift+↑/↓</strong> on a heading moves the whole section.</li>
+<li><strong>Several cursors:</strong> Ctrl+click adds a cursor, Alt+drag selects a column, <strong>Ctrl+D</strong> selects the next occurrence of the word, Ctrl+Alt+↑/↓ adds a cursor above or below.</li>
+<li><strong>Word goal:</strong> <em>Set a word goal for this note…</em>; the status bar shows your progress and says when you've reached it.</li>
+</ul>
+<h2 id="the-writing-assistant-desktop">The writing assistant <em>(desktop)</em></h2>
+<p>Select text and press <strong>Ctrl+Alt+R</strong>: improve it, make it shorter, fix spelling and grammar, make it more formal or casual, translate it, or give your own instruction. The AI's version appears as a change you accept or reject part by part. It uses Claude Code, OpenAI Codex or Gemini CLI, see <a href="14-ai.html">AI agents</a>. <em>Summarise this note</em> and <em>Describe images without alt text</em> work the same way.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="02-the-window.html">← 2. The Marky window</a><a class="next" href="04-views.html">4. Editing views and focus →</a></nav>
+<footer class="site-footer">Made with <a href="https://github.com/michaelkloprogge-gif/marky-releases">Marky</a></footer>
+</main>
+<aside class="page-toc" aria-label="On this page"><strong>On this page</strong><ul><li class="d2"><a href="#markdown-in-a-nutshell">Markdown in a nutshell</a></li><li class="d2"><a href="#formatting-shortcuts">Formatting shortcuts</a></li><li class="d2"><a href="#the--menu">The / menu</a></li><li class="d2"><a href="#templates">Templates</a></li><li class="d2"><a href="#properties">Properties</a></li><li class="d2"><a href="#pasting">Pasting</a></li><li class="d2"><a href="#checks-while-you-type">Checks while you type</a></li><li class="d2"><a href="#sections-multiple-cursors-and-the-word-goal">Sections, multiple cursors and the word goal</a></li><li class="d2"><a href="#the-writing-assistant-desktop">The writing assistant (desktop)</a></li></ul></aside>
+</div>
+</body>
+</html>

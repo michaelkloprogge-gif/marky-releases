@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2. The Marky window · Marky Manual</title>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to the text</a>
+<header class="site-header">
+  <button type="button" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">☰</button>
+  <a class="site-title" href="index.html">Marky Manual</a>
+  <input type="search" class="site-search" placeholder="Search" aria-label="Search this site" data-root="">
+  <div class="search-results" hidden></div>
+</header>
+<div class="site">
+<nav id="site-nav" class="site-nav" aria-label="Pages"><ul><li><a href="index.html">Marky Manual</a></li></ul><ul><li><a href="01-getting-started.html">1. Getting started</a></li><li><a href="02-the-window.html" aria-current="page">2. The Marky window</a></li><li><a href="03-writing.html">3. Writing</a></li><li><a href="04-views.html">4. Editing views and focus</a></li><li><a href="05-files.html">5. Files and folders</a></li><li><a href="06-tables.html">6. Tables</a></li><li><a href="07-media-and-diagrams.html">7. Pictures, video and diagrams</a></li><li><a href="08-linked-notes.html">8. Linked notes, tags and the graph</a></li><li><a href="09-citations.html">9. Citations</a></li><li><a href="10-reviewing.html">10. Reviewing: suggestions and comments</a></li><li><a href="11-live-editing.html">11. Editing together, live</a></li><li><a href="12-safety.html">12. Your work is safe</a></li><li><a href="13-export.html">13. Export, publish and present</a></li><li><a href="14-ai.html">14. AI agents (desktop)</a></li><li><a href="15-settings-plugins.html">15. Settings and plugins</a></li><li><a href="16-shortcuts.html">16. Keyboard shortcuts</a></li><li><a href="17-troubleshooting.html">17. Troubleshooting</a></li></ul></nav>
+<main id="content">
+<article class="markdown-body">
+<h1 id="2-the-marky-window">2. The Marky window</h1>
+<p><img src="images/window-parts.png" alt="The parts of the Marky window"></p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>What it's for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Toolbar</strong> (top)</td>
+<td>Open, open folder and save; formatting (bold, headings, lists, links, images, tables …); the layout (editor, split, preview); seamless view; the sidebar; theme; plugins; help; settings; the command palette</td>
+</tr>
+<tr>
+<td><strong>Tabs</strong></td>
+<td>One per open note. A dot marks unsaved changes; <strong>+</strong> opens a new note. Middle-click closes a tab</td>
+</tr>
+<tr>
+<td><strong>Sidebar</strong> (left)</td>
+<td>The open folder's files, search, Git, tags, backlinks, comments, properties and the outline. Show or hide it with <strong>Ctrl+Shift+E</strong></td>
+</tr>
+<tr>
+<td><strong>Editor</strong></td>
+<td>The Markdown text</td>
+</tr>
+<tr>
+<td><strong>Preview</strong></td>
+<td>What the note looks like. It follows the editor as you scroll and type</td>
+</tr>
+<tr>
+<td><strong>Status bar</strong> (bottom)</td>
+<td>Line and column, words and characters, reading time, the draft state, line endings and encoding; warnings (images without alt text), who's here in a shared note, and the word goal</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-toolbar">The toolbar</h2>
+<p><img src="images/toolbar.png" alt="The toolbar"></p>
+<p>From left to right: <strong>Open file</strong>, <strong>Open folder</strong>, <strong>Save</strong>; then the formatting buttons: <strong>bold</strong>, <em>italic</em>, <del>strikethrough</del>, <code>code</code>, headings 1–3, bulleted, numbered and task lists, quote, link, image, table, code block and horizontal line. Pointing at a button shows its name and shortcut.</p>
+<p>On the right: the three <strong>layouts</strong> (<em>Editor only</em>, <em>Split view</em>, <em>Preview only</em>), <strong>Seamless view</strong>, the <strong>sidebar</strong>, the <strong>theme</strong> (light, dark, sepia, high contrast or the system's choice), <strong>Plugins</strong>, <strong>Help</strong>, <strong>Settings</strong> and the <strong>command palette</strong>.</p>
+<h2 id="the-sidebar">The sidebar</h2>
+<p>The sidebar's panels appear when they have something to show:</p>
+<ul>
+<li><strong>Files</strong>: the open folder as a tree. Click to open; ✎ renames, × deletes (also <strong>F2</strong> and <strong>Del</strong>). The graph button shows how notes link.</li>
+<li><strong>Search</strong>: <strong>Ctrl+Shift+F</strong> searches all notes in the folder.</li>
+<li><strong>Git</strong> <em>(desktop)</em>: changed files, commit and sync.</li>
+<li><strong>Tags</strong> and <strong>Backlinks</strong>: see <a href="08-linked-notes.html">Linked notes</a>.</li>
+<li><strong>Comments</strong>: see <a href="10-reviewing.html">Reviewing</a>.</li>
+<li><strong>Properties</strong>: the note's front matter as fields.</li>
+<li><strong>Outline</strong>: the note's headings. Click one to go there.</li>
+</ul>
+<p><img src="images/sidebar.png" alt="The sidebar with files, tags and the outline"></p>
+<p>On a narrow window the sidebar slides over the editor and closes again once you pick something.</p>
+<h2 id="the-status-bar">The status bar</h2>
+<p><img src="images/statusbar.png" alt="The status bar"></p>
+<p>Click the parts that do something: the alt-text warning jumps to the first image without a description, <em>Suggesting</em> switches Suggest mode off, <em>● Live</em> shows who's in a shared note, and the word goal shows your progress.</p>
+<h2 id="the-command-palette">The command palette</h2>
+<p><strong>F1</strong> or <strong>Ctrl+Shift+P</strong> opens the palette: every command, searchable. Type a few letters (they don't have to be next to each other: <em>exwo</em> finds <em>Export as Word</em>), use ↑ ↓ and press Enter.</p>
+<p><strong>Ctrl+P</strong> is the file palette: find any note in the folder by name (<em>Desktop:</em> also recently opened files elsewhere).</p>
+<h2 id="themes-and-language">Themes and language</h2>
+<p>The theme button switches between <strong>light</strong>, <strong>dark</strong>, <strong>sepia</strong>, <strong>high contrast</strong> (WCAG AAA) and <strong>system</strong> (follows your computer). Marky speaks <strong>English</strong> and <strong>Dutch</strong>; it follows your computer's language, or pick one in <em>Settings › Appearance</em>.</p>
+<p><img src="images/dark.png" alt="Marky in the dark theme"></p>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="01-getting-started.html">← 1. Getting started</a><a class="next" href="03-writing.html">3. Writing →</a></nav>
+<footer class="site-footer">Made with <a href="https://github.com/michaelkloprogge-gif/marky-releases">Marky</a></footer>
+</main>
+<aside class="page-toc" aria-label="On this page"><strong>On this page</strong><ul><li class="d2"><a href="#the-toolbar">The toolbar</a></li><li class="d2"><a href="#the-sidebar">The sidebar</a></li><li class="d2"><a href="#the-status-bar">The status bar</a></li><li class="d2"><a href="#the-command-palette">The command palette</a></li><li class="d2"><a href="#themes-and-language">Themes and language</a></li></ul></aside>
+</div>
+</body>
+</html>

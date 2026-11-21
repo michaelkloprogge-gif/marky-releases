@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>13. Export, publish and present · Marky Manual</title>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to the text</a>
+<header class="site-header">
+  <button type="button" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">☰</button>
+  <a class="site-title" href="index.html">Marky Manual</a>
+  <input type="search" class="site-search" placeholder="Search" aria-label="Search this site" data-root="">
+  <div class="search-results" hidden></div>
+</header>
+<div class="site">
+<nav id="site-nav" class="site-nav" aria-label="Pages"><ul><li><a href="index.html">Marky Manual</a></li></ul><ul><li><a href="01-getting-started.html">1. Getting started</a></li><li><a href="02-the-window.html">2. The Marky window</a></li><li><a href="03-writing.html">3. Writing</a></li><li><a href="04-views.html">4. Editing views and focus</a></li><li><a href="05-files.html">5. Files and folders</a></li><li><a href="06-tables.html">6. Tables</a></li><li><a href="07-media-and-diagrams.html">7. Pictures, video and diagrams</a></li><li><a href="08-linked-notes.html">8. Linked notes, tags and the graph</a></li><li><a href="09-citations.html">9. Citations</a></li><li><a href="10-reviewing.html">10. Reviewing: suggestions and comments</a></li><li><a href="11-live-editing.html">11. Editing together, live</a></li><li><a href="12-safety.html">12. Your work is safe</a></li><li><a href="13-export.html" aria-current="page">13. Export, publish and present</a></li><li><a href="14-ai.html">14. AI agents (desktop)</a></li><li><a href="15-settings-plugins.html">15. Settings and plugins</a></li><li><a href="16-shortcuts.html">16. Keyboard shortcuts</a></li><li><a href="17-troubleshooting.html">17. Troubleshooting</a></li></ul></nav>
+<main id="content">
+<article class="markdown-body">
+<h1 id="13-export-publish-and-present">13. Export, publish and present</h1>
+<p>All exports are in the command palette (type <em>export</em>). When a note has suggestions, Marky first asks whether to show them, or take them accepted or rejected.</p>
+<table>
+<thead>
+<tr>
+<th>Export</th>
+<th>What you get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HTML</strong></td>
+<td>One self-contained file, pictures and diagrams included</td>
+</tr>
+<tr>
+<td><strong>PDF</strong> (Ctrl+Alt+P)</td>
+<td>The print dialog with print styling; choose <em>Save as PDF</em></td>
+</tr>
+<tr>
+<td><strong>PDF with options</strong></td>
+<td>A cover page, contents, header and footer, page numbers and a style</td>
+</tr>
+<tr>
+<td><strong>Word (.docx)</strong></td>
+<td>Real Word headings, lists, tables, footnotes, pictures and diagrams; tracked changes and comments</td>
+</tr>
+<tr>
+<td><strong>PowerPoint (.pptx)</strong></td>
+<td>Your slides, editable in PowerPoint</td>
+</tr>
+<tr>
+<td><strong>Website</strong></td>
+<td>A folder of notes as a website</td>
+</tr>
+<tr>
+<td><strong>Copy as rich text</strong></td>
+<td>For e-mail, Google Docs or Word</td>
+</tr>
+<tr>
+<td><strong>Copy for Confluence, Slack or plain text</strong></td>
+<td>In their own formatting</td>
+</tr>
+<tr>
+<td><strong>Confluence</strong> <em>(desktop)</em></td>
+<td>The note as a Confluence page</td>
+</tr>
+<tr>
+<td><strong>Pandoc</strong> <em>(desktop)</em></td>
+<td>EPUB, LaTeX or OpenDocument, if Pandoc is installed</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pdf-with-options">PDF with options</h2>
+<p><em>Export as PDF with options…</em>:</p>
+<p><img src="images/pdf-options.png" alt="PDF options"></p>
+<ul>
+<li>a <strong>cover page</strong> with title, subtitle, author, date and a logo;</li>
+<li>a <strong>table of contents</strong>;</li>
+<li><strong>header and footer</strong> text (<code>{title}</code>, <code>{date}</code> fill themselves in) and <strong>page numbers</strong>;</li>
+<li>a <strong>style</strong>: standard, serif, compact or minimal, plus your own CSS file;</li>
+<li>save it all as a <strong>preset</strong>; <em>Report</em> and <em>Academic</em> are built in.</li>
+</ul>
+<h2 id="word">Word</h2>
+<p>Headings become Word's heading styles, so Word's navigation and table of contents work. Code is set in Consolas, math as TeX text, diagrams as pictures, citations as text with the list of references. With a <strong>Word template</strong> (<em>Word template for exports…</em>: your organisation's .docx or .dotx), exports get its headers, footers, logo, fonts and styles. Put <code>{{content}}</code> in the template where the text belongs; <code>{{title}}</code>, <code>{{author}}</code> and <code>{{date}}</code> are filled in.</p>
+<h2 id="slides">Slides</h2>
+<p>Every <code>---</code> on a line of its own (between blank lines) starts a new slide, as in Marp.</p>
+<ul>
+<li><strong>Present</strong> (<strong>F5</strong>): ← → or click to move, <strong>F</strong> for full screen, <strong>Esc</strong> to leave. It starts at the slide your cursor is in. A slide with just a heading is centred like a title page; long slides shrink their text to fit.</li>
+<li><strong>Export slides as PDF</strong>: one slide per 16:9 page.</li>
+<li><strong>Export slides as PowerPoint (.pptx)</strong>: a file you can keep editing in PowerPoint, Keynote or Google Slides. The first heading becomes the slide's title, lists become bullets (with their levels), code a box in Consolas, tables real tables, pictures and diagrams pictures.</li>
+</ul>
+<p><img src="images/slides.png" alt="A slide being presented"></p>
+<h2 id="publishing-a-folder-as-a-website">Publishing a folder as a website</h2>
+<p><em>Publish folder as a website…</em> turns the open folder into a website: every note becomes a page. This manual is made that way.</p>
+<p><img src="images/website.png" alt="A website made from a folder of notes"></p>
+<ul>
+<li><strong>Pages:</strong> <code>guide/intro.md</code> becomes <code>guide/intro.html</code>, with the folder as <strong>navigation</strong> on the left, the page's <strong>contents</strong> on the right, <strong>search</strong> at the top and <strong>previous / next</strong> at the bottom. Light or dark, following the reader's system; on a phone the navigation folds into a ☰ menu.</li>
+<li><strong>The front page</strong> is <code>index.md</code> or <code>README.md</code>; without one, Marky makes a list of all pages. A page's title is <code>title:</code> from its properties, else its first heading.</li>
+<li><strong>Everything works:</strong> links between notes (also <code>[[wikilinks]]</code>) point at the pages, pictures and media files are copied, diagrams are drawn, citations filled in. Suggestions show accepted, comments are left out.</li>
+<li><strong>Left out:</strong> notes with <code>publish: false</code> or <code>draft: true</code>, encrypted notes, and folders whose name starts with <code>_</code>.</li>
+<li><strong>Where it goes:</strong> <strong>Save as .zip</strong>, or <strong>Write to _site in the folder</strong>. Put the files on any web server, or on <strong>GitHub Pages</strong>: push the contents of <code>_site</code> to a <code>gh-pages</code> branch (or a <code>docs/</code> folder) and switch on Pages in the repository's settings. Marky adds the <code>.nojekyll</code> file GitHub needs.</li>
+</ul>
+<h2 id="confluence-desktop">Confluence <em>(desktop)</em></h2>
+<p><em>Publish to Confluence…</em>: the note becomes a page in Confluence Cloud or Data Center, with its pictures and diagrams attached. Publishing again updates the same page, and Marky asks before replacing changes made in Confluence. You give Marky an API token once; it's kept in the system keychain.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="12-safety.html">← 12. Your work is safe</a><a class="next" href="14-ai.html">14. AI agents (desktop) →</a></nav>
+<footer class="site-footer">Made with <a href="https://github.com/michaelkloprogge-gif/marky-releases">Marky</a></footer>
+</main>
+<aside class="page-toc" aria-label="On this page"><strong>On this page</strong><ul><li class="d2"><a href="#pdf-with-options">PDF with options</a></li><li class="d2"><a href="#word">Word</a></li><li class="d2"><a href="#slides">Slides</a></li><li class="d2"><a href="#publishing-a-folder-as-a-website">Publishing a folder as a website</a></li><li class="d2"><a href="#confluence-desktop">Confluence (desktop)</a></li></ul></aside>
+</div>
+</body>
+</html>

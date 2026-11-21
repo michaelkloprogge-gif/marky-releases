@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>11. Editing together, live · Marky Manual</title>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to the text</a>
+<header class="site-header">
+  <button type="button" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">☰</button>
+  <a class="site-title" href="index.html">Marky Manual</a>
+  <input type="search" class="site-search" placeholder="Search" aria-label="Search this site" data-root="">
+  <div class="search-results" hidden></div>
+</header>
+<div class="site">
+<nav id="site-nav" class="site-nav" aria-label="Pages"><ul><li><a href="index.html">Marky Manual</a></li></ul><ul><li><a href="01-getting-started.html">1. Getting started</a></li><li><a href="02-the-window.html">2. The Marky window</a></li><li><a href="03-writing.html">3. Writing</a></li><li><a href="04-views.html">4. Editing views and focus</a></li><li><a href="05-files.html">5. Files and folders</a></li><li><a href="06-tables.html">6. Tables</a></li><li><a href="07-media-and-diagrams.html">7. Pictures, video and diagrams</a></li><li><a href="08-linked-notes.html">8. Linked notes, tags and the graph</a></li><li><a href="09-citations.html">9. Citations</a></li><li><a href="10-reviewing.html">10. Reviewing: suggestions and comments</a></li><li><a href="11-live-editing.html" aria-current="page">11. Editing together, live</a></li><li><a href="12-safety.html">12. Your work is safe</a></li><li><a href="13-export.html">13. Export, publish and present</a></li><li><a href="14-ai.html">14. AI agents (desktop)</a></li><li><a href="15-settings-plugins.html">15. Settings and plugins</a></li><li><a href="16-shortcuts.html">16. Keyboard shortcuts</a></li><li><a href="17-troubleshooting.html">17. Troubleshooting</a></li></ul></nav>
+<main id="content">
+<article class="markdown-body">
+<h1 id="11-editing-together-live">11. Editing together, live</h1>
+<p>Several people can edit one note at the same time, each in Marky in their browser or the desktop app, and see each other's cursors.</p>
+<h2 id="what-you-need">What you need</h2>
+<p>A <strong>live-editing server</strong>: a small Marky relay that your organisation runs (a Docker image; see the relay documentation). It only passes on encrypted messages and can't read the notes. When you use the Marky web app that the relay itself serves, Marky finds it by itself.</p>
+<h2 id="sharing-a-note">Sharing a note</h2>
+<ol>
+<li>Open the note and run <em>Share for live editing…</em>.</li>
+<li>The first time, fill in the server's address; it's remembered (<em>Settings › General</em>).</li>
+<li><strong>Start sharing</strong>. Marky asks your name once, so the others see who's who. Pick your colour in <em>Settings › General</em>.</li>
+</ol>
+<p><img src="images/share-dialog.png" alt="The Share dialog with its three links"></p>
+<p>You get <strong>three links</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Link</th>
+<th>Whoever has it can …</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Edit link</strong></td>
+<td>change the note</td>
+</tr>
+<tr>
+<td><strong>Review link</strong></td>
+<td>suggest changes and comment, but not change the text directly</td>
+</tr>
+<tr>
+<td><strong>Read-only link</strong></td>
+<td>read along</td>
+</tr>
+</tbody>
+</table>
+<p>Copy one and send it. <strong>The link is the key</strong>: share it only with the people it's for.</p>
+<h2 id="joining">Joining</h2>
+<p>Opening a link starts Marky with the shared note in a tab of its own (<em>Desktop:</em> <em>Join a shared note…</em> and paste the link). The keys disappear from the address bar once you're in.</p>
+<h2 id="while-you-edit-together">While you edit together</h2>
+<p><img src="images/live-editing.png" alt="Two people in one note: the other's cursor with their name"></p>
+<ul>
+<li>You see the others' <strong>cursors with their names</strong>; the status bar shows <strong>● Live</strong> and who's here. Click it for the links and the people.</li>
+<li><strong>Ctrl+Z</strong> undoes only your own changes.</li>
+<li><strong>Comments are shared</strong> too: new threads and replies appear for everyone at once, on the right words.</li>
+<li><strong>Suggestions</strong> work as usual.</li>
+<li><strong>Offline:</strong> if the connection drops, the status bar says <em>Live · reconnecting…</em>; keep typing and everything merges when it's back.</li>
+</ul>
+<h2 id="reviewers">Reviewers</h2>
+<p>Someone who opens a <strong>review link</strong> is always in Suggest mode: the status bar says <strong>Reviewing</strong>, everything they type or delete becomes a suggestion in their name, and they can't accept or reject suggestions; the editors decide. Reviewers can pass on review and read-only links, not edit links.</p>
+<p>A review link contains the edit key, and Marky (not the encryption) keeps reviewers to suggestions. Give review links to people you'd trust with an edit link.</p>
+<h2 id="who-wrote-what">Who wrote what</h2>
+<p><em>Show who wrote what (shared notes) on/off</em> gives each person's text a light background in their colour, with a legend above the note and their name when you point at a passage. Text from before sharing belongs to whoever shared the note.</p>
+<p><img src="images/who-wrote-what.png" alt="Each person's text in their own colour"></p>
+<p>The <strong>version history</strong> of a shared note also says who changed each version (<a href="12-safety.html">Your work is safe</a>).</p>
+<h2 id="your-file">Your file</h2>
+<p>For the person who shared it, the note stays an ordinary file, saved as always. Close it (or Marky) while the others keep editing, and reopening it reconnects and brings in what changed meanwhile. If the file changes outside Marky (a Git pull), the change is merged in for everyone.</p>
+<h2 id="stopping">Stopping</h2>
+<ul>
+<li><em>Stop sharing here</em> (or <em>Leave</em>) disconnects you; the others carry on.</li>
+<li><strong>End sharing for everyone</strong> disconnects everyone and makes all links stop working. Everybody keeps the text they have.</li>
+</ul>
+<h2 id="privacy-and-limits">Privacy and limits</h2>
+<ul>
+<li>Everything is <strong>encrypted on your computer</strong> before it leaves, with a key that's only in the link. The server can't read the note, the names or the comments; changes are signed, so read-only links can't change anything.</li>
+<li>The server keeps the encrypted note for those who join later, until sharing ends or nobody has changed it for 30 days.</li>
+<li>Names aren't checked: there are no accounts. Trust a name as much as you trust the people you sent the link to.</li>
+<li>Notes up to 8 MB can be shared. Encrypted notes can't be shared live.</li>
+</ul>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="10-reviewing.html">← 10. Reviewing: suggestions and comments</a><a class="next" href="12-safety.html">12. Your work is safe →</a></nav>
+<footer class="site-footer">Made with <a href="https://github.com/michaelkloprogge-gif/marky-releases">Marky</a></footer>
+</main>
+<aside class="page-toc" aria-label="On this page"><strong>On this page</strong><ul><li class="d2"><a href="#what-you-need">What you need</a></li><li class="d2"><a href="#sharing-a-note">Sharing a note</a></li><li class="d2"><a href="#joining">Joining</a></li><li class="d2"><a href="#while-you-edit-together">While you edit together</a></li><li class="d2"><a href="#reviewers">Reviewers</a></li><li class="d2"><a href="#who-wrote-what">Who wrote what</a></li><li class="d2"><a href="#your-file">Your file</a></li><li class="d2"><a href="#stopping">Stopping</a></li><li class="d2"><a href="#privacy-and-limits">Privacy and limits</a></li></ul></aside>
+</div>
+</body>
+</html>

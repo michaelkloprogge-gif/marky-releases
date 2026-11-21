@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5. Files and folders · Marky Manual</title>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to the text</a>
+<header class="site-header">
+  <button type="button" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">☰</button>
+  <a class="site-title" href="index.html">Marky Manual</a>
+  <input type="search" class="site-search" placeholder="Search" aria-label="Search this site" data-root="">
+  <div class="search-results" hidden></div>
+</header>
+<div class="site">
+<nav id="site-nav" class="site-nav" aria-label="Pages"><ul><li><a href="index.html">Marky Manual</a></li></ul><ul><li><a href="01-getting-started.html">1. Getting started</a></li><li><a href="02-the-window.html">2. The Marky window</a></li><li><a href="03-writing.html">3. Writing</a></li><li><a href="04-views.html">4. Editing views and focus</a></li><li><a href="05-files.html" aria-current="page">5. Files and folders</a></li><li><a href="06-tables.html">6. Tables</a></li><li><a href="07-media-and-diagrams.html">7. Pictures, video and diagrams</a></li><li><a href="08-linked-notes.html">8. Linked notes, tags and the graph</a></li><li><a href="09-citations.html">9. Citations</a></li><li><a href="10-reviewing.html">10. Reviewing: suggestions and comments</a></li><li><a href="11-live-editing.html">11. Editing together, live</a></li><li><a href="12-safety.html">12. Your work is safe</a></li><li><a href="13-export.html">13. Export, publish and present</a></li><li><a href="14-ai.html">14. AI agents (desktop)</a></li><li><a href="15-settings-plugins.html">15. Settings and plugins</a></li><li><a href="16-shortcuts.html">16. Keyboard shortcuts</a></li><li><a href="17-troubleshooting.html">17. Troubleshooting</a></li></ul></nav>
+<main id="content">
+<article class="markdown-body">
+<h1 id="5-files-and-folders">5. Files and folders</h1>
+<h2 id="notes-and-tabs">Notes and tabs</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Keys</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New note</td>
+<td>Alt+N</td>
+</tr>
+<tr>
+<td>Open a file</td>
+<td>Ctrl+O, or drag a <code>.md</code> file onto the window</td>
+</tr>
+<tr>
+<td>Open a folder</td>
+<td>Ctrl+Shift+O</td>
+</tr>
+<tr>
+<td>Go to a note in the folder</td>
+<td>Ctrl+P</td>
+</tr>
+<tr>
+<td>Save, Save as, Save all</td>
+<td>Ctrl+S, Ctrl+Shift+S, Ctrl+Alt+S</td>
+</tr>
+<tr>
+<td>Close the tab; next and previous tab</td>
+<td>Alt+W; Alt+PgDn, Alt+PgUp</td>
+</tr>
+</tbody>
+</table>
+<p>Each tab keeps its own undo history, cursor and scroll position. Closing a tab with unsaved changes asks <em>Save</em>, <em>Don't save</em> or <em>Cancel</em>.</p>
+<p>Line endings (LF or CRLF) and a UTF-8 byte-order mark are kept as they were; the status bar shows them. A file in another encoding (UTF-16, Windows-1252) opens read-only so saving can't damage it; <em>Save as</em> makes a UTF-8 copy.</p>
+<h2 id="the-open-folder">The open folder</h2>
+<p><img src="images/folder.png" alt="A folder in the sidebar, with a note open"></p>
+<p>The sidebar shows the folder's Markdown notes as a tree. Pictures in the folder load in the preview; links to other notes open them in a tab.</p>
+<ul>
+<li><strong>New note:</strong> the + button in the Files panel, or <em>New note in folder…</em>.</li>
+<li><strong>Rename:</strong> ✎ or <strong>F2</strong>. An open note's tab follows, unsaved changes included; links to it can be updated, and its comments come along.</li>
+<li><strong>Delete:</strong> × or <strong>Del</strong>. <em>Desktop:</em> to the Recycle Bin. <em>Web:</em> browsers have no Recycle Bin, so Marky asks first.</li>
+<li><strong>Changes by other programs:</strong> a note that changes on disk reloads by itself when you haven't edited it. If you have, a banner offers <em>Compare</em>, <em>Keep my version</em> or <em>Reload from disk</em>.</li>
+</ul>
+<p><em>Web:</em> Chrome and Edge can save into the folder you open; other browsers open a read-only copy.</p>
+<h2 id="search-in-the-folder">Search in the folder</h2>
+<p><strong>Ctrl+Shift+F</strong> searches every note in the folder, including unsaved changes in open tabs. The buttons next to the box switch on <em>match case</em> (Aa), <em>whole word</em> (ab) and <em>regular expressions</em> (.*). Click a result to open the note at the match. <strong>Replace all</strong> asks first; open notes get one change you can undo.</p>
+<p><img src="images/search.png" alt="Search in the folder"></p>
+<h2 id="contents-that-keep-themselves-up-to-date">Contents that keep themselves up to date</h2>
+<p>Type <code>/contents</code> (or <em>Insert contents</em>) for a list of the headings below it. Saving keeps it up to date. It sits between <code>&lt;!-- toc --&gt;</code> and <code>&lt;!-- tocstop --&gt;</code>, the markers other tools use too. <code>&lt;!-- toc max=4 --&gt;</code> includes deeper headings; a heading ending in <code>&lt;!-- omit in toc --&gt;</code> is left out.</p>
+<h2 id="git-desktop">Git <em>(desktop)</em></h2>
+<p>In a Git repository, the <strong>Git</strong> panel shows changed notes (with a letter in the file tree: M changed, A added, U new), lets you write a message and <strong>Commit</strong>, and <strong>Sync</strong> (pull and push). The status bar shows the branch.</p>
+<h2 id="sync-conflict-copies">Sync conflict copies</h2>
+<p>OneDrive, Dropbox, iCloud and Syncthing sometimes keep two versions of a note (<code>Plan (conflicted copy …).md</code>, <code>Plan-LAPTOP.md</code>). <em>Sync conflict copies…</em> lists them and compares each with the note: take changes over with the arrows, save the note, then remove the copy.</p>
+<h2 id="importing-a-word-document">Importing a Word document</h2>
+<p><em>Import Word document (.docx)…</em> turns a Word file into a note:</p>
+<ul>
+<li>headings, bold, italic, strikethrough, links, bulleted and numbered lists (nested), tables, footnotes and pictures;</li>
+<li>Word's <strong>tracked changes</strong> become suggestions in the reviewer's name (<a href="10-reviewing.html">Reviewing</a>);</li>
+<li>Word's <strong>comments</strong> become comment threads on the same text, with their replies and whether they were resolved.</li>
+</ul>
+<p>With a folder open, the note is saved in the folder (pictures in <code>assets/</code>, comments beside it). Without one, it opens as a new note with the comments written into the text as ``.</p>
+<p><img src="images/word-import.png" alt="A Word document imported: its tracked change as a suggestion, its comments in the panel"></p>
+<h2 id="encrypted-notes">Encrypted notes</h2>
+<p>Notes ending in <code>.md.age</code> are encrypted and open with a passphrase. See <a href="12-safety.html#encrypted-notes">Your work is safe</a>.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="04-views.html">← 4. Editing views and focus</a><a class="next" href="06-tables.html">6. Tables →</a></nav>
+<footer class="site-footer">Made with <a href="https://github.com/michaelkloprogge-gif/marky-releases">Marky</a></footer>
+</main>
+<aside class="page-toc" aria-label="On this page"><strong>On this page</strong><ul><li class="d2"><a href="#notes-and-tabs">Notes and tabs</a></li><li class="d2"><a href="#the-open-folder">The open folder</a></li><li class="d2"><a href="#search-in-the-folder">Search in the folder</a></li><li class="d2"><a href="#contents-that-keep-themselves-up-to-date">Contents that keep themselves up to date</a></li><li class="d2"><a href="#git-desktop">Git (desktop)</a></li><li class="d2"><a href="#sync-conflict-copies">Sync conflict copies</a></li><li class="d2"><a href="#importing-a-word-document">Importing a Word document</a></li><li class="d2"><a href="#encrypted-notes">Encrypted notes</a></li></ul></aside>
+</div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>17. Troubleshooting · Marky Manual</title>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to the text</a>
+<header class="site-header">
+  <button type="button" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">☰</button>
+  <a class="site-title" href="index.html">Marky Manual</a>
+  <input type="search" class="site-search" placeholder="Search" aria-label="Search this site" data-root="">
+  <div class="search-results" hidden></div>
+</header>
+<div class="site">
+<nav id="site-nav" class="site-nav" aria-label="Pages"><ul><li><a href="index.html">Marky Manual</a></li></ul><ul><li><a href="01-getting-started.html">1. Getting started</a></li><li><a href="02-the-window.html">2. The Marky window</a></li><li><a href="03-writing.html">3. Writing</a></li><li><a href="04-views.html">4. Editing views and focus</a></li><li><a href="05-files.html">5. Files and folders</a></li><li><a href="06-tables.html">6. Tables</a></li><li><a href="07-media-and-diagrams.html">7. Pictures, video and diagrams</a></li><li><a href="08-linked-notes.html">8. Linked notes, tags and the graph</a></li><li><a href="09-citations.html">9. Citations</a></li><li><a href="10-reviewing.html">10. Reviewing: suggestions and comments</a></li><li><a href="11-live-editing.html">11. Editing together, live</a></li><li><a href="12-safety.html">12. Your work is safe</a></li><li><a href="13-export.html">13. Export, publish and present</a></li><li><a href="14-ai.html">14. AI agents (desktop)</a></li><li><a href="15-settings-plugins.html">15. Settings and plugins</a></li><li><a href="16-shortcuts.html">16. Keyboard shortcuts</a></li><li><a href="17-troubleshooting.html" aria-current="page">17. Troubleshooting</a></li></ul></nav>
+<main id="content">
+<article class="markdown-body">
+<h1 id="17-troubleshooting">17. Troubleshooting</h1>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows warns about the installer</td>
+<td>Expected until the installer is signed: <em>More info → Run anyway</em></td>
+</tr>
+<tr>
+<td><em>Desktop:</em> "Access denied: Marky can only use files and folders you opened"</td>
+<td>Marky only touches files you opened yourself, as a protection against harmful documents. Open the file or its folder again (Ctrl+O, Ctrl+Shift+O)</td>
+</tr>
+<tr>
+<td><em>Web:</em> I can't save into the folder</td>
+<td>Only Chrome and Edge can write to a folder; other browsers open a read-only copy and download what you save</td>
+</tr>
+<tr>
+<td>Pictures from the web don't show</td>
+<td><em>Settings › Preview › Load remote images</em> is off (on purpose, for privacy)</td>
+</tr>
+<tr>
+<td>A very large note (several MB) feels slower</td>
+<td>The preview waits until you pause typing; everything else stays quick. Notes up to 10 MB are supported</td>
+</tr>
+<tr>
+<td>Something odd after installing a plugin</td>
+<td><em>Restart in safe mode</em>, then remove the plugin in <em>Manage plugins…</em></td>
+</tr>
+<tr>
+<td>The plugin market says the list isn't signed</td>
+<td>The list was changed on the way. Nothing is shown or installed; try later</td>
+</tr>
+<tr>
+<td>A comment is under <em>Detached</em></td>
+<td>The text it was on was changed or deleted. Read it, then resolve or delete it</td>
+</tr>
+<tr>
+<td>"That shared note isn't available any more"</td>
+<td>Sharing was ended, or nobody changed it for 30 days. Ask for a new link</td>
+</tr>
+<tr>
+<td><em>Live · reconnecting…</em></td>
+<td>The connection dropped. Keep typing; Marky reconnects and everything merges</td>
+</tr>
+<tr>
+<td>"This browser can't do the encryption live editing needs"</td>
+<td>Use a recent Chrome, Edge, Firefox or Safari 17+, or the desktop app</td>
+</tr>
+<tr>
+<td>"That passphrase doesn't open …"</td>
+<td>Passphrases are case-sensitive; check Caps Lock. Without the right passphrase nobody can open the note</td>
+</tr>
+<tr>
+<td>A chart "only reads data from the open folder"</td>
+<td>Charts don't load data from the internet. Put the data file in the folder and use its name: <code>"url": "data.csv"</code></td>
+</tr>
+<tr>
+<td>Citations show as <code>[@key]</code></td>
+<td>The note needs <code>bibliography: file.bib</code> in its properties, the file must be in the folder, and the key must be in it</td>
+</tr>
+<tr>
+<td>A video is only a link in an export</td>
+<td>Exports can't play videos, so they link to them</td>
+</tr>
+<tr>
+<td><em>Desktop:</em> "Codex isn't installed" / "Gemini CLI isn't installed"</td>
+<td>Install it and sign in once in a terminal, or pick another agent in <em>Settings › Features</em></td>
+</tr>
+<tr>
+<td>Reporting a bug</td>
+<td><em>About Marky</em> → <strong>Copy diagnostic report</strong> (versions and settings, never your notes) and include it</td>
+</tr>
+</tbody>
+</table>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="16-shortcuts.html">← 16. Keyboard shortcuts</a></nav>
+<footer class="site-footer">Made with <a href="https://github.com/michaelkloprogge-gif/marky-releases">Marky</a></footer>
+</main>
+
+</div>
+</body>
+</html>

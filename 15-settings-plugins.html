@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>15. Settings and plugins · Marky Manual</title>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to the text</a>
+<header class="site-header">
+  <button type="button" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">☰</button>
+  <a class="site-title" href="index.html">Marky Manual</a>
+  <input type="search" class="site-search" placeholder="Search" aria-label="Search this site" data-root="">
+  <div class="search-results" hidden></div>
+</header>
+<div class="site">
+<nav id="site-nav" class="site-nav" aria-label="Pages"><ul><li><a href="index.html">Marky Manual</a></li></ul><ul><li><a href="01-getting-started.html">1. Getting started</a></li><li><a href="02-the-window.html">2. The Marky window</a></li><li><a href="03-writing.html">3. Writing</a></li><li><a href="04-views.html">4. Editing views and focus</a></li><li><a href="05-files.html">5. Files and folders</a></li><li><a href="06-tables.html">6. Tables</a></li><li><a href="07-media-and-diagrams.html">7. Pictures, video and diagrams</a></li><li><a href="08-linked-notes.html">8. Linked notes, tags and the graph</a></li><li><a href="09-citations.html">9. Citations</a></li><li><a href="10-reviewing.html">10. Reviewing: suggestions and comments</a></li><li><a href="11-live-editing.html">11. Editing together, live</a></li><li><a href="12-safety.html">12. Your work is safe</a></li><li><a href="13-export.html">13. Export, publish and present</a></li><li><a href="14-ai.html">14. AI agents (desktop)</a></li><li><a href="15-settings-plugins.html" aria-current="page">15. Settings and plugins</a></li><li><a href="16-shortcuts.html">16. Keyboard shortcuts</a></li><li><a href="17-troubleshooting.html">17. Troubleshooting</a></li></ul></nav>
+<main id="content">
+<article class="markdown-body">
+<h1 id="15-settings-and-plugins">15. Settings and plugins</h1>
+<h2 id="settings">Settings</h2>
+<p>Open them with <strong>Ctrl+,</strong> or the gear button. Changes apply at once.</p>
+<p><img src="images/settings.png" alt="Settings"></p>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Settings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>General</strong></td>
+<td>Your name (with your suggestions and comments, and in shared notes); your colour when editing together; where comments are kept; the live-editing server. <em>Desktop:</em> check for updates; the Confluence address, e-mail and space</td>
+</tr>
+<tr>
+<td><strong>Appearance</strong></td>
+<td>Theme (system, light, dark, sepia, high contrast); language (English, Nederlands)</td>
+</tr>
+<tr>
+<td><strong>Editor</strong></td>
+<td>Font and size, readable line length, word wrap, line numbers, spellcheck, Markdown checks, the editing view, keybindings (Standard, Vim, Emacs), focus-mode options, how pasted pictures are stored. <em>Desktop:</em> titles for pasted web addresses</td>
+</tr>
+<tr>
+<td><strong>Preview</strong></td>
+<td>Font size, scroll sync, the PlantUML server, loading pictures from the internet, your own CSS for the preview and exports</td>
+</tr>
+<tr>
+<td><strong>Features</strong></td>
+<td>Switch off what you don't use (Git, AI, tags and backlinks, the graph, slides, contents blocks, architecture work, sync-conflict notices). Nothing is deleted. <em>Desktop:</em> which AI agent the writing assistant uses</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Export</strong> and <strong>Import</strong> save your settings to a file and read them back (handy on a second computer); <strong>Reset</strong> restores the defaults.</p>
+<h2 id="updates-desktop">Updates <em>(desktop)</em></h2>
+<p>Marky checks for a new version when it starts (switch this off in <em>Settings › General</em>) and asks before installing. <em>Check for updates</em> in the palette checks now. Updates are signed: Marky only installs a version signed by its makers.</p>
+<h2 id="plugins">Plugins</h2>
+<p><em>Manage plugins…</em> (the plug button) lists the plugins.</p>
+<p><img src="images/plugins.png" alt="Plugins: the built-in ones and those you installed"></p>
+<p><strong>Built in</strong> (switch them off if you don't need them): Math, Diagrams (Mermaid), Graphs (Graphviz), Charts (Vega-Lite), Drawings (Excalidraw).</p>
+<h3 id="the-plugin-market">The plugin market</h3>
+<p><strong>Plugin market › Browse</strong> shows plugins you can add: Kanban boards, CSV tables, calculations, QR codes, readability, repeated words, change case, a focus timer and more.</p>
+<ul>
+<li>Search, or pick a category.</li>
+<li><strong>Details</strong> shows what a plugin does, what it's allowed to do, in plain words, and what changed in the latest version.</li>
+<li>Before installing, Marky shows the permissions again and asks.</li>
+<li>Installed plugins with a newer version show <strong>Update to …</strong>; if an update asks for more than before, the new permissions are marked.</li>
+<li>Marky fetches the list only when you click Browse, only shows a list signed by Marky's maintainer, and checks every plugin it downloads against that list.</li>
+</ul>
+<h3 id="how-plugins-are-kept-safe">How plugins are kept safe</h3>
+<p>Plugins run in a <strong>sandbox without network access</strong>, and only get what they asked for and you allowed (read the note, change it, add commands, draw code blocks …). A plugin that crashes or hangs is switched off. If something misbehaves, <strong>Restart in safe mode</strong> starts Marky without plugins. Plugins can't read encrypted notes.</p>
+<p>You can also install a plugin from a <code>.js</code> file, and write your own: see the plugin documentation in the Marky repository.</p>
+<h2 id="the-command-line">The command line</h2>
+<p><code>marky-cli.mjs</code> (on the releases page, needs Node.js 20 or later) runs Marky's checks and exports in a terminal or a CI pipeline:</p>
+<pre><code>node marky-cli.mjs lint docs/                  # check every note in docs/
+node marky-cli.mjs lint docs/ --fix            # and fix what's clear
+node marky-cli.mjs lint docs/ --format github  # annotations in GitHub Actions
+node marky-cli.mjs export note.md --html       # or --docx, or --pdf
+</code></pre>
+<p><code>lint</code> ends with exit code 1 when it finds problems, so a pipeline can fail on them.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page"><a class="prev" href="14-ai.html">← 14. AI agents (desktop)</a><a class="next" href="16-shortcuts.html">16. Keyboard shortcuts →</a></nav>
+<footer class="site-footer">Made with <a href="https://github.com/michaelkloprogge-gif/marky-releases">Marky</a></footer>
+</main>
+<aside class="page-toc" aria-label="On this page"><strong>On this page</strong><ul><li class="d2"><a href="#settings">Settings</a></li><li class="d2"><a href="#updates-desktop">Updates (desktop)</a></li><li class="d2"><a href="#plugins">Plugins</a></li><li class="d3"><a href="#the-plugin-market">The plugin market</a></li><li class="d3"><a href="#how-plugins-are-kept-safe">How plugins are kept safe</a></li><li class="d2"><a href="#the-command-line">The command line</a></li></ul></aside>
+</div>
+</body>
+</html>
