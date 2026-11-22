@@ -84,6 +84,12 @@ digraph {
 <li><code>```structurizr</code> blocks (the Structurizr DSL) are drawn as C4 diagrams on your computer; choose the view with <code>```structurizr view=Containers</code>. See <a href="08-linked-notes.html#architecture-documentation">Architecture documentation</a>.</li>
 <li><code>```plantuml</code> blocks are drawn by a <strong>PlantUML server</strong> you choose in <em>Settings › Preview</em> (the public one, Kroki, or one on your own computer). This is off by default, because the diagram's text goes to that server.</li>
 </ul>
+<h3 id="api-documents-and-design-tokens">API documents and design tokens</h3>
+<p>A <code>```openapi</code> block (or <code>swagger</code>) holds an OpenAPI 3 or Swagger 2 document, in YAML or JSON. The preview shows it as readable API documentation: the title, version and servers, then each endpoint with its method, path, parameters, request body and responses, and the models with their fields. Type <code>/api</code> for a small example.</p>
+<p><img src="images/openapi.png" alt="An OpenAPI document shown as endpoints and models"></p>
+<p>A <code>```tokens</code> block holds design tokens: the <a href="https://www.designtokens.org/" rel="noopener noreferrer" target="_blank">W3C Design Tokens</a> format (<code>$value</code>, <code>$type</code>, aliases such as <code>{color.blue}</code>) or simply names and values. The preview shows colour swatches, bars for sizes and spacing, rounded corners for radii, and type samples for fonts. Type <code>/tokens</code> for an example.</p>
+<p><img src="images/tokens.png" alt="Design tokens shown as swatches, sizes and type samples"></p>
+<p>Both are drawn from the text only: nothing is fetched or run, and a value can never become markup. They go into HTML and PDF exports as they look in the preview, and into Word as a picture.</p>
 <h3 id="math">Math</h3>
 <p><code>$E = mc^2$</code> inline, or a block:</p>
 <pre><code>$$
@@ -95,7 +101,7 @@ $$
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="06-tables.html">← 6. Tables</a><a class="next" href="08-linked-notes.html">8. Linked notes, tags and the graph →</a></nav>
 <footer class="site-footer">Made with <a href="https://github.com/michaelkloprogge-gif/marky-releases">Marky</a></footer>
 </main>
-<aside class="page-toc" aria-label="On this page"><strong>On this page</strong><ul><li class="d2"><a href="#pictures">Pictures</a></li><li class="d2"><a href="#videos-and-sound">Videos and sound</a></li><li class="d2"><a href="#diagrams">Diagrams</a></li><li class="d3"><a href="#mermaid">Mermaid</a></li><li class="d3"><a href="#graphviz">Graphviz</a></li><li class="d3"><a href="#charts-vega-lite">Charts (Vega-Lite)</a></li><li class="d3"><a href="#drawings-excalidraw">Drawings (Excalidraw)</a></li><li class="d3"><a href="#c4-models-structurizr-and-plantuml">C4 models (Structurizr) and PlantUML</a></li><li class="d3"><a href="#math">Math</a></li></ul></aside>
+<aside class="page-toc" aria-label="On this page"><strong>On this page</strong><ul><li class="d2"><a href="#pictures">Pictures</a></li><li class="d2"><a href="#videos-and-sound">Videos and sound</a></li><li class="d2"><a href="#diagrams">Diagrams</a></li><li class="d3"><a href="#mermaid">Mermaid</a></li><li class="d3"><a href="#graphviz">Graphviz</a></li><li class="d3"><a href="#charts-vega-lite">Charts (Vega-Lite)</a></li><li class="d3"><a href="#drawings-excalidraw">Drawings (Excalidraw)</a></li><li class="d3"><a href="#c4-models-structurizr-and-plantuml">C4 models (Structurizr) and PlantUML</a></li><li class="d3"><a href="#api-documents-and-design-tokens">API documents and design tokens</a></li><li class="d3"><a href="#math">Math</a></li></ul></aside>
 </div>
 </body>
 </html>

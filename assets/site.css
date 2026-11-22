@@ -131,6 +131,41 @@
 .markdown-body audio.media-audio { width: min(100%, 480px); }
 @media print { .markdown-body .video-embed { aspect-ratio: auto; background: none; } .markdown-body .video-link { position: static; color: inherit; background: none; } .markdown-body .video-play { display: none; } }
 
+/* ```openapi and ```tokens previews (preview/specs.ts) */
+.markdown-body .spec-block { border: 1px solid var(--md-border, #d8dee4); border-radius: 8px; padding: 12px 14px; overflow-x: auto; }
+.markdown-body .spec-block table { font-size: 0.85em; margin: 0.4em 0 0.8em; }
+.markdown-body .spec-block p { margin: 0.3em 0; }
+.markdown-body .spec-head { display: flex; align-items: baseline; gap: 8px; }
+.markdown-body .spec-title { font-size: 1.15em; }
+.markdown-body .spec-version, .markdown-body .spec-deprecated { font-size: 0.75em; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--md-border, #d8dee4); color: var(--md-muted, #59636e); }
+.markdown-body .spec-deprecated { text-decoration: line-through; }
+.markdown-body .spec-desc { color: var(--md-muted, #59636e); }
+.markdown-body .spec-op, .markdown-body .spec-model { border-top: 1px solid var(--md-border, #d8dee4); padding-top: 0.6em; margin-top: 0.6em; }
+.markdown-body .spec-op-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; }
+.markdown-body .spec-method { font: 700 0.75em/1.6 ui-monospace, SFMono-Regular, Consolas, monospace; padding: 0 7px; border-radius: 4px; color: #fff; background: #59636e; }
+.markdown-body .spec-get { background: #0969da; }
+.markdown-body .spec-post { background: #1a7f37; }
+.markdown-body .spec-put, .markdown-body .spec-patch { background: #9a6700; }
+.markdown-body .spec-delete { background: #cf222e; }
+.markdown-body .spec-path { font-weight: 600; }
+.markdown-body .spec-summary { color: var(--md-muted, #59636e); }
+.markdown-body .spec-label { font-weight: 600; }
+.markdown-body .spec-code { font: 600 0.9em ui-monospace, SFMono-Regular, Consolas, monospace; }
+.markdown-body .spec-code-ok { color: var(--md-ok, #1a7f37); }
+.markdown-body .spec-code-err { color: var(--md-err, #cf222e); }
+.markdown-body .spec-models > strong { display: block; margin-top: 0.8em; }
+.markdown-body .spec-tokens tr.tok-group th { background: none; border-left: none; border-right: none; padding: 0.9em 0 0.3em; text-align: left; }
+.markdown-body .spec-tokens tr.tok-group:first-child th { padding-top: 0; border-top: none; }
+.markdown-body .tok-group-name { font-weight: 650; text-transform: capitalize; }
+.markdown-body .spec-tokens table { width: 100%; }
+.markdown-body .spec-tokens td { vertical-align: middle; }
+.markdown-body .tok-sample { width: 1%; white-space: nowrap; }
+.markdown-body .spec-block .tok-sample svg { max-width: none; height: auto; }
+.markdown-body .tok-sample svg { display: block; color: var(--md-fg, #1f2328); }
+.markdown-body .tok-desc, .markdown-body .tok-alias, .markdown-body .tok-type { color: var(--md-muted, #59636e); font-size: 0.9em; }
+.markdown-body .tok-value { min-width: 9em; }
+.markdown-body .tok-value code { white-space: normal; overflow-wrap: break-word; }
+
 
 :root { color-scheme: light dark; --site-bg: #fff; --site-fg: #1f2328; --site-muted: #59636e; --site-border: #d1d9e0; --site-accent: #0969da; --site-side: #f6f8fa; }
 @media (prefers-color-scheme: dark) { :root { --site-bg: #0d1117; --site-fg: #e6edf3; --site-muted: #9198a1; --site-border: #3d444d; --site-accent: #4493f8; --site-side: #151b23; } }
