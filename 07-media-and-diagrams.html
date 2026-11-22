@@ -23,10 +23,10 @@
 <h2 id="pictures">Pictures</h2>
 <p><code>![A description](picture.png)</code> shows a picture. The description (alt text) is read to screen-reader users and shown if the picture can't load.</p>
 <ul>
-<li><strong>Paste or drop</strong> a picture into the editor. In a folder it's saved in <code>assets/</code> next to the note; otherwise it's put in the note itself (up to 2 MB).</li>
+<li><strong>Paste or drop</strong> a picture into the editor. In a folder it's saved in <code>assets/</code> next to the note; otherwise it's put in the note itself (up to 2 MB). <em>Desktop:</em> a saved note outside a folder also gets an <code>assets/</code> folder next to it.</li>
 <li><strong>Size:</strong> <code>![Map](map.png){width=50%}</code> (of the page width) or <code>{width=320}</code> (pixels), or <em>Image size…</em> with the cursor on a picture.</li>
 <li><strong>Make smaller:</strong> <em>Optimize image…</em> saves a smaller WebP copy and updates the link.</li>
-<li><strong>Pictures from the internet</strong> don't load unless you switch on <em>Settings › Preview › Load remote images</em>; a note can't track you through them.</li>
+<li><strong>Pictures from the internet</strong> load by default. Switch off <em>Settings › Preview › Load images from the internet</em> so a note can't track you through them.</li>
 </ul>
 <h2 id="videos-and-sound">Videos and sound</h2>
 <p>Put a YouTube or Vimeo link in a picture, or on a line of its own:</p>
@@ -39,7 +39,7 @@ https://vimeo.com/76979871
 <p>Video and sound <strong>files</strong> get a player: <code>![Clip](media/clip.mp4)</code>, <code>.webm</code>, <code>.mov</code>, <code>.mp3</code>, <code>.m4a</code>, <code>.wav</code>, <code>.ogg</code>, <code>.flac</code>.</p>
 <p>Exports (PDF, Word) and other Markdown apps see a link to the video.</p>
 <h2 id="diagrams">Diagrams</h2>
-<p>A code block with the right language is drawn as a diagram. All of these are drawn <strong>on your own computer</strong>, follow the light or dark theme, and go into HTML, PDF, Word and PowerPoint as pictures. Switch any of them off in <em>Manage plugins…</em>.</p>
+<p>A code block with the right language is drawn as a diagram. All of these except PlantUML are drawn <strong>on your own computer</strong>, follow the light or dark theme, and go into HTML, PDF, Word and PowerPoint as pictures. Mermaid, Graphviz, charts, drawings and math can be switched off in <em>Manage plugins…</em>.</p>
 <h3 id="mermaid">Mermaid</h3>
 <pre><code>```mermaid
 flowchart LR

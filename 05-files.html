@@ -61,9 +61,9 @@
 <p><img src="images/folder.png" alt="A folder in the sidebar, with a note open"></p>
 <p>The sidebar shows the folder's Markdown notes as a tree. Pictures in the folder load in the preview; links to other notes open them in a tab.</p>
 <ul>
-<li><strong>New note:</strong> the + button in the Files panel, or <em>New note in folder…</em>.</li>
+<li><strong>New note:</strong> the + button in the Files panel, or <em>New file in folder…</em>.</li>
 <li><strong>Rename:</strong> ✎ or <strong>F2</strong>. An open note's tab follows, unsaved changes included; links to it can be updated, and its comments come along.</li>
-<li><strong>Delete:</strong> × or <strong>Del</strong>. <em>Desktop:</em> to the Recycle Bin. <em>Web:</em> browsers have no Recycle Bin, so Marky asks first.</li>
+<li><strong>Delete:</strong> × or <strong>Del</strong>. Marky asks first. <em>Desktop:</em> the note goes to the Recycle Bin. <em>Web:</em> browsers have no Recycle Bin, so it's deleted for good.</li>
 <li><strong>Changes by other programs:</strong> a note that changes on disk reloads by itself when you haven't edited it. If you have, a banner offers <em>Compare</em>, <em>Keep my version</em> or <em>Reload from disk</em>.</li>
 </ul>
 <p><em>Web:</em> Chrome and Edge can save into the folder you open; other browsers open a read-only copy.</p>
@@ -73,7 +73,7 @@
 <h2 id="contents-that-keep-themselves-up-to-date">Contents that keep themselves up to date</h2>
 <p>Type <code>/contents</code> (or <em>Insert contents</em>) for a list of the headings below it. Saving keeps it up to date. It sits between <code>&lt;!-- toc --&gt;</code> and <code>&lt;!-- tocstop --&gt;</code>, the markers other tools use too. <code>&lt;!-- toc max=4 --&gt;</code> includes deeper headings; a heading ending in <code>&lt;!-- omit in toc --&gt;</code> is left out.</p>
 <h2 id="git-desktop">Git <em>(desktop)</em></h2>
-<p>In a Git repository, the <strong>Git</strong> panel shows changed notes (with a letter in the file tree: M changed, A added, U new), lets you write a message and <strong>Commit</strong>, and <strong>Sync</strong> (pull and push). The status bar shows the branch.</p>
+<p>In a Git repository, the <strong>Git</strong> panel shows changed notes (with a letter in the file tree: M changed, A added, U new), lets you write a message and <strong>Commit all</strong>, and <strong>Pull</strong> and <strong>Push</strong> (when the branch has a remote). The panel shows the branch.</p>
 <h2 id="sync-conflict-copies">Sync conflict copies</h2>
 <p>OneDrive, Dropbox, iCloud and Syncthing sometimes keep two versions of a note (<code>Plan (conflicted copy …).md</code>, <code>Plan-LAPTOP.md</code>). <em>Sync conflict copies…</em> lists them and compares each with the note: take changes over with the arrows, save the note, then remove the copy.</p>
 <h2 id="importing-a-word-document">Importing a Word document</h2>

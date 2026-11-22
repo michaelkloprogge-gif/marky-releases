@@ -27,10 +27,10 @@
 <ul>
 <li><strong>Read and search</strong> the open folder's notes (not encrypted ones), the open tab, and text in pictures (when OCR is on).</li>
 <li><strong>Propose changes</strong>: a proposal shows as an inline difference in the note. <strong>Accept</strong>, <strong>Reject</strong>, or <strong>Keep as suggestions</strong> (the agent's changes become suggestions in its name, to review later or hand to someone else).</li>
-<li><strong>Create notes</strong>, which open for you to look at before saving.</li>
+<li><strong>Create notes</strong>: you see the new note as a proposal; when you accept it, it's written to the folder and opened.</li>
 <li><strong>Read and answer comments</strong>: write <strong>@Claude</strong> in a comment and the agent sees it waiting for it. It makes the change you asked for (as a proposal), replies in the thread and resolves it. Its comments are marked <strong>AI</strong>.</li>
 </ul>
-<p>Agents can't save or delete anything themselves. The one thing they write without asking is comments: only in the note's comments file, never in its text, with a notice each time.</p>
+<p>Agents can't save, change or delete your notes themselves: a change waits for you, and only a new note you accept is written at once. The one thing they write without asking is comments: only in the note's comments file, never in its text, with a notice each time.</p>
 <h2 id="reviewing-an-agents-work">Reviewing an agent's work</h2>
 <p>Review a plan or spec an agent wrote the way you'd review a colleague's: select text, add a comment (<strong>Ctrl+Alt+N</strong>) and mention <strong>@Claude</strong> (it's in the list when you type <code>@</code>). The thread shows <em>Waiting for Claude</em>. Then tell Claude Code <em>handle my comments in Marky</em>: it finds every thread that asks it something, in any note of the folder, proposes the changes, answers each thread and resolves it. Reply with another @Claude to go on; a thread without a mention is left to people.</p>
 <p><img src="images/agent-comments.png" alt="Claude's answer in a comment thread, marked AI"></p>
@@ -46,7 +46,7 @@
 <h2 id="ask-your-notes">Ask your notes</h2>
 <p><em>Ask your notes</em> (<strong>Ctrl+Shift+L</strong>) opens a chat panel beside the note. Ask a question in plain words; Claude answers from your notes and names the ones it used.</p>
 <h2 id="the-writing-assistant">The writing assistant</h2>
-<p>Select text and press <strong>Ctrl+Alt+R</strong>: improve, shorten, fix spelling and grammar, more formal, more casual, translate, or your own instruction. Also <em>Summarise this note</em> and <em>Describe images without alt text</em>. Pick which agent does this in <em>Settings › Features › AI agent</em>.</p>
+<p>Select text and press <strong>Ctrl+Alt+R</strong>: improve, shorten, fix spelling and grammar, more formal, more casual, translate, or your own instruction. Also <em>Ask the AI to summarise the note (or selection)</em> and <em>Ask the AI to describe images without alt text</em>. Pick which agent does this in <em>Settings › Features › AI agent</em>.</p>
 <h2 id="privacy">Privacy</h2>
 <p>Only what you ask about goes to the AI: the selection for the writing assistant, and what the agent reads with its tools for the others. Encrypted notes are never available to agents.</p>
 </article>
