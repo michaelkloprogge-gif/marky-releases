@@ -43,6 +43,9 @@
 <li><em>Build this note with Claude Code</em> asks which project folder to build in, then starts Claude Code there. It reads the spec, its mockups, the linked notes and your open comments, builds the app with its own tools (asking you as usual before it changes files) and answers your comments as it goes. When something is built, it proposes adding the files to the note's <code>implemented_in:</code> so you can trace a story to its code.</li>
 </ol>
 <p><img src="images/mockup.png" alt="A screen note with a phone-sized mockup in the preview"></p>
+<p><strong>Stories, screens and code</strong> (command palette) shows the design notes in the folder: every spec, story, screen, API endpoint and data model, with its status and the code files it lists. A story that's under way or done but lists no code is marked <em>no code listed</em>, and threads waiting for Claude are counted. Click a note to open it; <em>Show</em> filters on what's missing. <em>Desktop:</em> Marky checks that the files exist in the project folder you build in (✓ or ✗); pick a folder with <em>Pick project folder…</em> if it doesn't know one yet. It only looks whether the files are there, it doesn't read them. Claude sees the same overview with its <code>get_traceability</code> tool.</p>
+<p><img src="images/traceability.png" alt="Stories, screens and code: status, code files and comments per design note"></p>
+<p>Mockups go into exports too: an HTML file shows the page itself (in a frame that can't do anything), PDF, Word, slides and copies show a picture of it.</p>
 <h2 id="ask-your-notes">Ask your notes</h2>
 <p><em>Ask your notes</em> (<strong>Ctrl+Shift+L</strong>) opens a chat panel beside the note. Ask a question in plain words; Claude answers from your notes and names the ones it used.</p>
 <h2 id="the-writing-assistant">The writing assistant</h2>
