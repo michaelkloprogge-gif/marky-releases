@@ -101,13 +101,25 @@
 <li><strong>Left out:</strong> notes with <code>publish: false</code> or <code>draft: true</code>, encrypted notes, and folders whose name starts with <code>_</code>.</li>
 <li><strong>Where it goes:</strong> <strong>Save as .zip</strong>, or <strong>Write to _site in the folder</strong>. Put the files on any web server, or on <strong>GitHub Pages</strong>: push the contents of <code>_site</code> to a <code>gh-pages</code> branch (or a <code>docs/</code> folder) and switch on Pages in the repository's settings. Marky adds the <code>.nojekyll</code> file GitHub needs.</li>
 </ul>
+<h2 id="publishing-one-note-as-a-page">Publishing one note as a page</h2>
+<p><em>Publish note as a page (link)…</em> gives one note a link that anyone can open in a browser to read it, drawn as in the preview, without Marky or an account. Use it for a plan you want feedback on, a status page, or a spec for people outside your team.</p>
+<p><img src="images/page-dialog.png" alt="Publishing a note as a page: the link, updating on save, Unpublish"></p>
+<ul>
+<li><strong>What readers see:</strong> the note as a clean page: diagrams, charts, math, mockups and pictures included, suggestions accepted and comments left out. A <em>Dark</em> button and <em>Print</em> are at the top. Links to your other notes don't lead anywhere (only this note is published).</li>
+<li><strong>Updating:</strong> with <em>Update the page each time I save the note</em> on, every save updates the page. Otherwise press <em>Update now</em> when you're ready. The link stays the same.</li>
+<li><strong>Unpublish</strong> takes the page down for everyone at once. Publishing again later gives a new link.</li>
+<li><strong>Where it's kept:</strong> on the same Marky relay that live editing uses (see chapter 11), <strong>end-to-end encrypted</strong>: the key is in the link after <code>#</code>, which browsers never send to a server, so the server holds only sealed bytes. The page is signed with a key that stays on your computer, so only you can change it and readers can tell it's yours.</li>
+<li><strong>How long:</strong> a relay removes what nobody updated for 30 days (unless whoever runs it chose otherwise). A page that updates on save stays as long as you keep working on the note.</li>
+<li><strong>Limits:</strong> the note must be saved, pages up to 15 MB (pictures included), and encrypted notes can't be published.</li>
+</ul>
+<p><img src="images/page-reader.png" alt="A published page as a reader sees it"></p>
 <h2 id="confluence-desktop">Confluence <em>(desktop)</em></h2>
 <p><em>Publish to Confluence…</em>: the note becomes a page in Confluence Cloud or Data Center, with its pictures and diagrams attached. Publishing again updates the same page, and Marky asks before replacing changes made in Confluence. You give Marky an API token once; it's kept in the system keychain.</p>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="12-safety.html">← 12. Your work is safe</a><a class="next" href="14-ai.html">14. AI agents (desktop) →</a></nav>
 <footer class="site-footer">Made with <a href="https://github.com/michaelkloprogge-gif/marky-releases">Marky</a></footer>
 </main>
-<aside class="page-toc" aria-label="On this page"><strong>On this page</strong><ul><li class="d2"><a href="#pdf-with-options">PDF with options</a></li><li class="d2"><a href="#word">Word</a></li><li class="d2"><a href="#slides">Slides</a></li><li class="d2"><a href="#publishing-a-folder-as-a-website">Publishing a folder as a website</a></li><li class="d2"><a href="#confluence-desktop">Confluence (desktop)</a></li></ul></aside>
+<aside class="page-toc" aria-label="On this page"><strong>On this page</strong><ul><li class="d2"><a href="#pdf-with-options">PDF with options</a></li><li class="d2"><a href="#word">Word</a></li><li class="d2"><a href="#slides">Slides</a></li><li class="d2"><a href="#publishing-a-folder-as-a-website">Publishing a folder as a website</a></li><li class="d2"><a href="#publishing-one-note-as-a-page">Publishing one note as a page</a></li><li class="d2"><a href="#confluence-desktop">Confluence (desktop)</a></li></ul></aside>
 </div>
 </body>
 </html>
