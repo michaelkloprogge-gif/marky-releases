@@ -165,6 +165,11 @@
 .markdown-body .tok-desc, .markdown-body .tok-alias, .markdown-body .tok-type { color: var(--md-muted, #59636e); font-size: 0.9em; }
 .markdown-body .tok-value { min-width: 9em; }
 .markdown-body .tok-value code { white-space: normal; overflow-wrap: break-word; }
+.markdown-body .tok-contrast { display: inline-block; margin-top: 2px; font-size: 0.78em; font-weight: 600; padding: 0 6px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }
+.markdown-body .tok-contrast .tok-against { font-weight: 400; opacity: 0.8; }
+.markdown-body .tok-pass { color: var(--md-ok, #1a7f37); }
+.markdown-body .tok-large { color: var(--md-warn, #9a6700); }
+.markdown-body .tok-fail { color: var(--md-err, #cf222e); }
 
 
 :root { color-scheme: light dark; --site-bg: #fff; --site-fg: #1f2328; --site-muted: #59636e; --site-border: #d1d9e0; --site-accent: #0969da; --site-side: #f6f8fa; }

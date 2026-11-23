@@ -48,6 +48,8 @@ flowchart LR
 </code></pre>
 <p>Flowcharts, sequence, class, state and entity-relationship diagrams, Gantt charts, pie charts, mind maps, timelines and C4. See <a href="https://mermaid.js.org" rel="noopener noreferrer" target="_blank">mermaid.js.org</a>.</p>
 <p><img src="images/mermaid.png" alt="A Mermaid flowchart"></p>
+<p><strong>Editing a flowchart in the picture:</strong> point at a flowchart in the preview and click <strong>Edit</strong>. Click a box to select it; the bar above the diagram then renames it, adds a box connected to it (<strong>Add box</strong>), draws an arrow to another box (<strong>Connect to…</strong>, then click that box) or deletes it with its arrows. Each step changes the diagram's text in the note, so <strong>Ctrl+Z</strong> undoes it, and the rest of what you wrote (comments, styling, other lines) stays as it was. <strong>Done</strong> ends editing.</p>
+<p><img src="images/flow-edit.png" alt="Editing a flowchart: the selected box and the edit bar"></p>
 <h3 id="graphviz">Graphviz</h3>
 <pre><code>```dot
 digraph {
@@ -87,7 +89,7 @@ digraph {
 <h3 id="api-documents-and-design-tokens">API documents and design tokens</h3>
 <p>A <code>```openapi</code> block (or <code>swagger</code>) holds an OpenAPI 3 or Swagger 2 document, in YAML or JSON. The preview shows it as readable API documentation: the title, version and servers, then each endpoint with its method, path, parameters, request body and responses, and the models with their fields. Type <code>/api</code> for a small example.</p>
 <p><img src="images/openapi.png" alt="An OpenAPI document shown as endpoints and models"></p>
-<p>A <code>```tokens</code> block holds design tokens: the <a href="https://www.designtokens.org/" rel="noopener noreferrer" target="_blank">W3C Design Tokens</a> format (<code>$value</code>, <code>$type</code>, aliases such as <code>{color.blue}</code>) or simply names and values. The preview shows colour swatches, bars for sizes and spacing, rounded corners for radii, and type samples for fonts. Type <code>/tokens</code> for an example.</p>
+<p>A <code>```tokens</code> block holds design tokens: the <a href="https://www.designtokens.org/" rel="noopener noreferrer" target="_blank">W3C Design Tokens</a> format (<code>$value</code>, <code>$type</code>, aliases such as <code>{color.blue}</code>) or simply names and values. The preview shows colour swatches, bars for sizes and spacing, rounded corners for radii, and type samples for fonts. Type <code>/tokens</code> for an example. Colour tokens show their <strong>contrast</strong> with the WCAG grade (<em>AAA</em>, <em>AA</em>, <em>AA large</em> or <em>fails</em>): a text colour is measured against the background token (a token named <code>bg</code>, <code>background</code>, <code>surface</code> or <code>canvas</code>), a background against the text token, or against white or black when there is none.</p>
 <p><img src="images/tokens.png" alt="Design tokens shown as swatches, sizes and type samples"></p>
 <p>Both are drawn from the text only: nothing is fetched or run, and a value can never become markup. They go into HTML and PDF exports as they look in the preview, and into Word as a picture.</p>
 <h3 id="math">Math</h3>
