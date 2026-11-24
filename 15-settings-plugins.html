@@ -78,7 +78,9 @@
 node marky-cli.mjs lint docs/ --fix            # and fix what's clear
 node marky-cli.mjs lint docs/ --format github  # annotations in GitHub Actions
 node marky-cli.mjs export note.md --html       # or --docx, or --pdf
+node marky-cli.mjs tokens design.md --format tailwind4 -o src/theme.css
 </code></pre>
+<p><code>tokens</code> writes the design tokens of a note's tokens blocks (or of a tokens <code>.json</code>/<code>.yaml</code> file) as <code>css</code> (the default), <code>scss</code>, <code>json</code>, <code>tailwind4</code>, <code>tailwind3</code> or <code>ts</code>, to the screen or to <code>-o</code>.</p>
 <p><code>lint</code> ends with exit code 1 when it finds problems, so a pipeline can fail on them.</p>
 </article>
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="14-ai.html">← 14. AI agents (desktop)</a><a class="next" href="16-shortcuts.html">16. Keyboard shortcuts →</a></nav>

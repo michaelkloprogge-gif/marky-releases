@@ -28,12 +28,31 @@
 <li><strong>Read and search</strong> the open folder's notes (not encrypted ones), the open tab, and text in pictures (when OCR is on).</li>
 <li><strong>Propose changes</strong>: a proposal shows as an inline difference in the note. <strong>Accept</strong>, <strong>Reject</strong>, or <strong>Keep as suggestions</strong> (the agent's changes become suggestions in its name, to review later or hand to someone else).</li>
 <li><strong>Create notes</strong>: you see the new note as a proposal; when you accept it, it's written to the folder and opened.</li>
+<li><strong>Change several notes at once</strong>: renaming a term everywhere, or bringing specs in line with a changed story, comes as one <strong>change set</strong> (see below).</li>
 <li><strong>Read and answer comments</strong>: write <strong>@Claude</strong> in a comment and the agent sees it waiting for it. It makes the change you asked for (as a proposal), replies in the thread and resolves it. Its comments are marked <strong>AI</strong>.</li>
 </ul>
 <p>Agents can't save, change or delete your notes themselves: a change waits for you, and only a new note you accept is written at once. The one thing they write without asking is comments: only in the note's comments file, never in its text, with a notice each time.</p>
 <h2 id="reviewing-an-agents-work">Reviewing an agent's work</h2>
 <p>Review a plan or spec an agent wrote the way you'd review a colleague's: select text, add a comment (<strong>Ctrl+Alt+N</strong>) and mention <strong>@Claude</strong> (it's in the list when you type <code>@</code>). The thread shows <em>Waiting for Claude</em>. Then tell Claude Code <em>handle my comments in Marky</em>: it finds every thread that asks it something, in any note of the folder, proposes the changes, answers each thread and resolves it. Reply with another @Claude to go on; a thread without a mention is left to people.</p>
 <p><img src="images/agent-comments.png" alt="Claude's answer in a comment thread, marked AI"></p>
+<h2 id="changes-across-several-notes">Changes across several notes</h2>
+<p>When an agent's change touches more than one note, it arrives as one change set: a dialog lists every note it changes (<em>new</em> for notes it creates), with the lines added and removed, and shows each note's change when you click it.</p>
+<p><img src="images/change-set.png" alt="Reviewing a change across three notes"></p>
+<ul>
+<li><strong>Untick</strong> the notes you don't want, then <strong>Apply</strong>. Everything you kept is applied together: open notes get the change in the editor (Ctrl+Z works, you save as usual), closed notes are written.</li>
+<li><strong>Undo</strong> in the bar that follows puts all of them back, except a note someone changed since, which is left as it is.</li>
+<li><strong>Keep as suggestions</strong> puts the changes into the notes as suggestions in the agent's name; <strong>Later</strong> puts the review aside (a bar above the editor brings it back); <strong>Reject all</strong> changes nothing.</li>
+<li>Marky checks every edit before showing anything: if one of them doesn't fit its note, the whole set is refused and the agent is told which one.</li>
+</ul>
+<h2 id="notes-that-may-be-out-of-date">Notes that may be out of date</h2>
+<p>A spec written from a story, or a screen built on an ADR, can say so in its properties:</p>
+<pre><code class="hljs language-yaml"><span class="hljs-attr">based_on:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">../stories/checkout.md</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">"[[Payment ADR]]"</span>
+</code></pre>
+<p><em>Mark note as up to date with its sources</em> (command palette) records a fingerprint of each source next to it (<code>checkout.md@3f9a2c1b</code>), and Marky keeps a copy of the source as it was. Sources can also be <strong>code</strong> in the folder (<code>- ../src/checkout/pay.ts</code>): a spec that lists the code it describes is flagged when that code changes. When a source's text changes later (a note's properties don't count), the note shows a bar: <em>This note may be out of date</em>. <strong>Show what changed</strong> shows the source's changes since the check; <strong>Mark as up to date</strong> records that the note is in line again. <em>Notes that may be out of date…</em> lists every such note in the folder, including sources that are missing or were never checked.</p>
+<p><img src="images/stale.png" alt="A spec whose story changed: what changed since it was checked"></p>
+<p>Agents can do the checking for you: tell Claude Code <em>bring the specs in line with the stories</em>. It asks Marky which notes are out of date and what changed in their sources, then proposes one change set that updates them and marks them up to date when you accept it.</p>
 <h2 id="designing-and-building-an-app">Designing and building an app</h2>
 <p>Design the app in notes first, then hand it to Claude Code:</p>
 <ol>
@@ -61,7 +80,7 @@
 <nav class="pager" aria-label="Previous and next page"><a class="prev" href="13-export.html">← 13. Export, publish and present</a><a class="next" href="15-settings-plugins.html">15. Settings and plugins →</a></nav>
 <footer class="site-footer">Made with <a href="https://github.com/michaelkloprogge-gif/marky-releases">Marky</a></footer>
 </main>
-<aside class="page-toc" aria-label="On this page"><strong>On this page</strong><ul><li class="d2"><a href="#starting-an-agent">Starting an agent</a></li><li class="d2"><a href="#what-agents-can-do">What agents can do</a></li><li class="d2"><a href="#reviewing-an-agents-work">Reviewing an agent&#39;s work</a></li><li class="d2"><a href="#designing-and-building-an-app">Designing and building an app</a></li><li class="d2"><a href="#ask-your-notes">Ask your notes</a></li><li class="d2"><a href="#the-writing-assistant">The writing assistant</a></li><li class="d2"><a href="#privacy">Privacy</a></li></ul></aside>
+<aside class="page-toc" aria-label="On this page"><strong>On this page</strong><ul><li class="d2"><a href="#starting-an-agent">Starting an agent</a></li><li class="d2"><a href="#what-agents-can-do">What agents can do</a></li><li class="d2"><a href="#reviewing-an-agents-work">Reviewing an agent&#39;s work</a></li><li class="d2"><a href="#changes-across-several-notes">Changes across several notes</a></li><li class="d2"><a href="#notes-that-may-be-out-of-date">Notes that may be out of date</a></li><li class="d2"><a href="#designing-and-building-an-app">Designing and building an app</a></li><li class="d2"><a href="#ask-your-notes">Ask your notes</a></li><li class="d2"><a href="#the-writing-assistant">The writing assistant</a></li><li class="d2"><a href="#privacy">Privacy</a></li></ul></aside>
 </div>
 </body>
 </html>
